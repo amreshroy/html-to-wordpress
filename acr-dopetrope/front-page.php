@@ -1,4 +1,4 @@
-
+<?php get_header(); ?>
 				<!-- Banner -->
 				<section id="banner">
 					<header>
@@ -195,3 +195,4 @@
 						</div>
 					</div>
 				</section>
+<?php get_footer(); ?>
