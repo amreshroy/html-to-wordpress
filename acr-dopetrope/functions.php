@@ -1,5 +1,18 @@
 <!-- Theme Functions File -->
 <?php
+
+function acr_dopetrope(){
+    add_theme_support('custom-logo');
+    add_theme_support('title-tag');
+    add_theme_support('post-thumbnails');
+    add_theme_support('automatic-feed-links');
+    add_image_size('home', 600, 400, array('center', 'center'));
+
+    register_nav_menus( array(
+        'primary' => __('Primary Menu', 'acr_dopetrope') 
+    ));
+};
+
 function acr_scripts(){
     wp_enqueue_style('style_css', get_stylesheet_uri( ));
     wp_enqueue_style('jquery');
