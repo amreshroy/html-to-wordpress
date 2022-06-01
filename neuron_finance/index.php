@@ -10,36 +10,8 @@
 
 		<title>Neuron Finance</title>
 
-        <!--  favicon -->
-        <link rel="shortcut icon" href="assets/img/ico/favicon.png">
-        <!--  apple-touch-icon -->
-        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/img/ico/apple-touch-icon-144-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/img/ico/apple-touch-icon-114-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/img/ico/apple-touch-icon-72-precomposed.png">
-        <link rel="apple-touch-icon-precomposed" href="assets/img/ico/apple-touch-icon-57-precomposed.png">
-
-		<!-- animate CSS -->
-		<link rel="stylesheet" href="assets/css/animate.min.css" media="all" />
-		<!-- FontAwesome CSS -->
-		<link rel="stylesheet" href="assets/fonts/font-awesome/css/font-awesome.min.css" media="all" />
-		<!-- Owl Carousel -->
-		<link rel="stylesheet" href="assets/css/owl.carousel.min.css" media="all" />
-		<!-- Bootsnav Menu -->
-		<link rel="stylesheet" href="assets/css/bootsnav.css" media="all" />
-		<!-- Bootstrap -->
-		<link rel="stylesheet"  href="assets/bootstrap/css/bootstrap.min.css" media="all" />
-		<!-- Style CSS -->
-		<link rel="stylesheet" type="text/css" href="style.css" media="all" />
-
-
-		<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-		<!--[if lt IE 9]>
-		  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-		<![endif]-->
+		<?php wp_head(); ?>
 	</head>
-
 
 	<body>
 	
@@ -103,12 +75,12 @@
 	                            </a>
 	                            <ul class="dropdown-menu cart-list">
 	                                <li>
-	                                    <a href="#" class="photo"><img src="assets/img/cart-1.jpg" class="cart-thumb" alt="" /></a>
+	                                    <a href="#" class="photo"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/cart-1.jpg" class="cart-thumb" alt="" /></a>
 	                                    <h2><a href="#">Denim SlimFit Shirt </a></h2>
 	                                    <p>2x - <span class="price">$19.99</span></p>
 	                                </li>
 	                                <li>
-	                                    <a href="#" class="photo"><img src="assets/img/cart-3.jpg" class="cart-thumb" alt="" /></a>
+	                                    <a href="#" class="photo"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/cart-3.jpg" class="cart-thumb" alt="" /></a>
 	                                    <h2><a href="#">Denim Polo Shirt</a></h2>
 	                                    <p>2x - <span class="price">$12.99</span></p>
 	                                </li>
@@ -127,7 +99,7 @@
 	                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
 	                        <i class="fa fa-bars"></i>
 	                    </button>
-	                    <a class="navbar-brand" href="index.html"><img src="assets/img/logo.png" class="logo logo-scrolled" alt=""></a>
+	                    <a class="navbar-brand" href="index.html"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo.png" class="logo logo-scrolled" alt=""></a>
 	                </div>
 	                <!-- End Header Navigation -->
 
@@ -269,7 +241,7 @@
 					</div>
 					<div class="col-md-6">
 						<div class="block-img">
-							<img src="assets/img/homepageblock.jpg" alt="" />
+							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/homepageblock.jpg" alt="" />
 						</div>
 					</div>
 				</div>
@@ -293,7 +265,7 @@
 					<!-- single service -->
 					<div class="col-sm-6 col-md-4">
 						<div class="services-tiem">
-							<img class="hvr-buzz-out" src="assets/img/services/1.png" alt="" />
+							<img class="hvr-buzz-out" src="<?php echo get_template_directory_uri(); ?>/assets/img/services/1.png" alt="" />
 							<h3><a href="#">Performance</a></h3>
 							<p>Dynamically fabricate innovative products and distributed web services. Distinctively pontificate.</p>
 						</div>
@@ -301,7 +273,7 @@
 					<!-- single service -->
 					<div class="col-sm-6 col-md-4">
 						<div class="services-tiem">
-							<img src="assets/img/services/2.png" alt="" />
+							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/services/2.png" alt="" />
 							<h3><a href="#">Sustainability</a></h3>
 							<p>Dynamically fabricate innovative products and distributed web services. Distinctively pontificate.</p>
 						</div>
@@ -309,7 +281,7 @@
 					<!-- single service -->
 					<div class="col-sm-6 col-md-4">
 						<div class="services-tiem">
-							<img src="assets/img/services/3.png" alt="" />
+							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/services/3.png" alt="" />
 							<h3><a href="#">Web Design</a></h3>
 							<p>Dynamically fabricate innovative products and distributed web services. Distinctively pontificate.</p>
 						</div>
@@ -317,7 +289,7 @@
 					<!-- single service -->
 					<div class="col-sm-6 col-md-4">
 						<div class="services-tiem">
-							<img src="assets/img/services/4.png" alt="" />
+							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/services/4.png" alt="" />
 							<h3><a href="#">Web Development</a></h3>
 							<p>Dynamically fabricate innovative products and distributed web services. Distinctively pontificate.</p>
 						</div>
@@ -325,7 +297,7 @@
 					<!-- single service -->
 					<div class="col-sm-6 col-md-4">
 						<div class="services-tiem">
-							<img src="assets/img/services/5.png" alt="" />
+							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/services/5.png" alt="" />
 							<h3><a href="#">Branding Design</a></h3>
 							<p>Dynamically fabricate innovative products and distributed web services. Distinctively pontificate.</p>
 						</div>
@@ -333,7 +305,7 @@
 					<!-- single service -->
 					<div class="col-sm-6 col-md-4">
 						<div class="services-tiem">
-							<img src="assets/img/services/6.png" alt="" />
+							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/services/6.png" alt="" />
 							<h3><a href="#">Marketing </a></h3>
 							<p>Dynamically fabricate innovative products and distributed web services. Distinctively pontificate.</p>
 						</div>
@@ -349,11 +321,11 @@
 				<div class="row">
 					<div class="col-md-12">
 						<div class="all-client-logo">
-							<a href="#"><img src="assets/img/cling-logo/1.jpg" alt="" /></a>
-							<a href="#"><img src="assets/img/cling-logo/2.jpg" alt="" /></a>
-							<a href="#"><img src="assets/img/cling-logo/3.jpg" alt="" /></a>
-							<a href="#"><img src="assets/img/cling-logo/4.jpg" alt="" /></a>
-							<a href="#"><img src="assets/img/cling-logo/5.jpg" alt="" /></a>
+							<a href="#"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/cling-logo/1.jpg" alt="" /></a>
+							<a href="#"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/cling-logo/2.jpg" alt="" /></a>
+							<a href="#"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/cling-logo/3.jpg" alt="" /></a>
+							<a href="#"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/cling-logo/4.jpg" alt="" /></a>
+							<a href="#"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/cling-logo/5.jpg" alt="" /></a>
 						</div>
 					</div><!-- /.col-md-12 -->
 				</div><!-- /.row -->
@@ -369,13 +341,13 @@
 						<!-- start single footer widget -->
 						<div class="col-sm-6 col-md-4">
 							<div class="footer-widget about-us">
-								<a href="index.html"><img src="assets/img/logo-white.png" alt="" /></a>
+								<a href="index.html"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo-white.png" alt="" /></a>
 								<p>Collaboratively create resource sucking manufactured products and worldwide e-services. Seamlessly revol tionize holistic data rather than intermandated results. Energistically innovate open-source systems for performance based total.</p>
 								<div class="online-card">
-									<a href="#"><img src="assets/img/online-card/1.png" alt="" /></a>
-									<a href="#"><img src="assets/img/online-card/2.png" alt="" /></a>
-									<a href="#"><img src="assets/img/online-card/3.png" alt="" /></a>
-									<a href="#"><img src="assets/img/online-card/4.png" alt="" /></a>
+									<a href="#"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/online-card/1.png" alt="" /></a>
+									<a href="#"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/online-card/2.png" alt="" /></a>
+									<a href="#"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/online-card/3.png" alt="" /></a>
+									<a href="#"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/online-card/4.png" alt="" /></a>
 								</div>
 							</div>
 						</div><!-- end single footer widget -->
@@ -402,19 +374,19 @@
 								<h3>Latest Post</h3>
 								<ul>
 									<li>
-										<img src="assets/img/latest-post/1.png" alt="" />
+										<img src="<?php echo get_template_directory_uri(); ?>/assets/img/latest-post/1.png" alt="" />
 										<p><a href="#">Headset No Longer Wire For Sound</a></p>
 										<span>12 May 2016</span>
 										
 									</li>
 									<li>
-										<img src="assets/img/latest-post/2.png" alt="" />
+										<img src="<?php echo get_template_directory_uri(); ?>/assets/img/latest-post/2.png" alt="" />
 										<p><a href="#">Headset No Longer Wire For Sound</a></p>
 										<span>12 May 2016</span>
 										
 									</li>
 									<li>
-										<img src="assets/img/latest-post/3.png" alt="" />
+										<img src="<?php echo get_template_directory_uri(); ?>/assets/img/latest-post/3.png" alt="" />
 										<p><a href="#">Headset No Longer Wire For Sound</a></p>
 										<span>12 May 2016</span>
 										
@@ -470,15 +442,6 @@
 				</div>
 			</div>
 		</div>
-
-		<!-- main jQuery -->
-		<script src="assets/js/jquery-2.1.3.min.js"></script>
-		<script src="assets/bootstrap/js/bootstrap.min.js"></script>
-		<script src="assets/js/bootsnav.js"></script>
-		<script src="assets/js/owl.carousel.min.js"></script>
-		<script src="assets/js/wow.min.js"></script>
-        <script src="assets/js/ajaxchimp.js"></script>
-        <script src="assets/js/ajaxchimp-config.js"></script> 
-		<script src="assets/js/script.js"></script>
+		<?php wp_footer(); ?>
 	</body>
 </html>
