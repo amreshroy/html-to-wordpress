@@ -4,11 +4,6 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="Neuron Finance is a finance, corporate and business HTML template">
-        <meta name="keywords" content="advisor, corporate accountant, finance, financial, insurance, investment, consultation">
-        <meta name="author" content="trendytheme.net">
-
-		<title>Neuron Finance</title>
 
 		<?php wp_head(); ?>
 	</head>
