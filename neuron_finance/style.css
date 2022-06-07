@@ -296,6 +296,41 @@ nav.navbar.bootsnav ul.nav > li > a {
 	font-family: 'Titillium Web', sans-serif;
 }
 
+.nav.navbar-nav ul.sub-menu {
+    position: absolute;
+    left: 0;
+    background: #fff;
+    width: 300px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    margin-top: 30px;
+    opacity: 0;
+    visibility: hidden;
+    transition: .3s;
+}
+
+.nav.navbar-nav ul.sub-menu li a {
+    color: #3f4b5a;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+.nav.navbar-nav ul.sub-menu li a:hover{
+	color: #3452ff;
+}
+
+.nav.navbar-nav ul.sub-menu li {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 15px;
+}
+
+.nav.navbar-nav li:hover ul.sub-menu {
+    opacity: 1;
+    visibility: visible;
+    z-index: 99;
+    margin-top: 0px;
+}
+
 nav.navbar.bootsnav ul.nav > li > a:hover,
 nav.navbar.bootsnav ul.nav > li.active > a,
 nav.navbar.bootsnav ul.nav > li>.dropdown-menu li > a:hover,
