@@ -72,7 +72,18 @@ function neuron_register_post_type() {
             'supports' => array( 'title', 'editor', 'thumbnail', 'custom-fields', 'page-attributes' ),
             'public' => false,
             'show_ui' => true 
-        )
+        ),
+    );
+
+    register_post_type('intro', array(
+        'labels' => array(
+            'name' => __('My Intro'),
+            'singular_name' => __('intro')
+            ),
+            'supports' => array( 'title', 'editor', 'thumbnail', 'page-attributes' ),
+            'public' => false,
+            'show_ui' => true 
+        ),
     );
 }
 add_action( 'init', 'neuron_register_post_type' );
