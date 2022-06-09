@@ -264,16 +264,9 @@
 						<!-- start single footer widget -->
 						<div class="col-sm-6 col-md-4">
 							<div class="footer-widget about-us">
-								<a href="index.html"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo-white.png" alt="" /></a>
-								<p>Collaboratively create resource sucking manufactured products and worldwide e-services. Seamlessly revol tionize holistic data rather than intermandated results. Energistically innovate open-source systems for performance based total.</p>
-								<div class="online-card">
-									<a href="#"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/online-card/1.png" alt="" /></a>
-									<a href="#"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/online-card/2.png" alt="" /></a>
-									<a href="#"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/online-card/3.png" alt="" /></a>
-									<a href="#"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/online-card/4.png" alt="" /></a>
-								</div>
+							<?php echo dynamic_sidebar('sidebar-1'); ?>
 							</div>
-						</div><!-- end single footer widget -->
+						</div> <!--end single footer widget -->
 						
 						<!-- start single footer widget -->
 						<div class="col-sm-6 col-md-2">
