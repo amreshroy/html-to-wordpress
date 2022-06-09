@@ -118,36 +118,33 @@
 
 		<!-- ::::::::::::::::::::: start slider section:::::::::::::::::::::::::: -->
 		<section class="slider-area">
-		
-		<?php
+			<?php
 			global $post;
-			$args = array('posts_per_page' => '5', 'post_type' => 'slide', 'orderby' => 'menu_order', 'order' => 'ASC');
-			$slide_posts = get_posts($args);
-			foreach ($slide_posts as $post) : setup_postdata($post);
 
-			$btn_text = get_post_meta($post -> ID, 'btn_text', true);
-			$btn_link = get_post_meta($post -> ID, 'btn_link', true);
-		?>
-			<!-- slide item one -->
-			<div style="background-image:url(<?php the_post_thumbnail_url('large'); ?>);" class="homepage-slider">
-				<div class="display-table">
-					<div class="display-table-cell">
-						<div class="container">
-							<div class="row">
-								<div class="col-sm-7">
-									<div class="slider-content">
-										<h1><?php the_title(); ?></h1>
-										<?php the_content(); ?>
-										<a href="<?php echo $btn_link; ?>"> <?php echo $btn_text; ?> <i class="fa fa-long-arrow-right"></i></a>
+			$args = array('posts_per_page' => 5, 'post_type' => 'slide', 'orderby' => 'menu_order', 'order' => 'ASC');
+			$slide_posts = new WP_Query($args);
+
+			while ( $slide_posts->have_posts() ) : $slide_posts->the_post();  
+			?>
+				<div style="background-image:url(<?php the_post_thumbnail_url('large'); ?>);" class="homepage-slider">
+					<div class="display-table">
+						<div class="display-table-cell">
+							<div class="container">
+								<div class="row">
+									<div class="col-sm-7">
+										<div class="slider-content">
+											<h1><?php the_title(); ?></h1>
+											<?php the_content(); ?>
+											<a href="<?php echo get_post_meta($post -> ID, 'btn_link', true); ?>"> <?php echo get_post_meta($post -> ID, 'btn_text', true); ?> <i class="fa fa-long-arrow-right"></i></a>
+										</div>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-				</div>
-			</div>
-		<?php endforeach; wp_reset_query(); ?>	
+				</div> 
 			
+			<?php endwhile; wp_reset_query(); ?>
 		</section><!-- slider area end -->
 	
 	
@@ -167,10 +164,10 @@
 				<div class="row">
 				<?php
 				global $post;
-				$args = array('posts_per_page' => '3', 'post_type' => 'intro', 'orderby' => 'menu_order', 'order' => 'ASC');
-				$intro_posts = get_posts($args);
-				foreach ($intro_posts as $post) : setup_postdata($post);
-				?>
+				$args = array('posts_per_page' => 3, 'post_type' => 'intro', 'orderby' => 'menu_order', 'order' => 'ASC');
+				$intro_posts  = new WP_Query($args);
+				while ( $intro_posts->have_posts() ) : $intro_posts->the_post();  ?>
+
 				<!-- single intro -->
 					<div class="col-md-4">
 						<div class="single-intro">
@@ -181,7 +178,9 @@
 							</div>
 						</div>
 					</div>
-			<?php endforeach; wp_reset_query(); ?>
+				<?php endwhile; wp_reset_query(); ?>
+				</div>
+			</div>
 		</section><!-- intro area end -->
 	
 	
@@ -221,53 +220,19 @@
 				
 				<div class="row">
 					<!-- single service -->
+					<?php
+					global $post;
+					$args = array('post_per_page' => 6, 'post_type' => 'services', 'orderby' => 'menu_order' , 'order' => 'ASC');
+					$services_post  = new WP_Query($args);
+					while ( $services_post->have_posts() ) : $services_post->the_post(); ?>
 					<div class="col-sm-6 col-md-4">
 						<div class="services-tiem">
-							<img class="hvr-buzz-out" src="<?php echo get_template_directory_uri(); ?>/assets/img/services/1.png" alt="" />
-							<h3><a href="#">Performance</a></h3>
-							<p>Dynamically fabricate innovative products and distributed web services. Distinctively pontificate.</p>
+							<?php the_post_thumbnail('thumbnail', array('class' => 'hvr-buzz-out')); ?>
+							<h3><a href="<?php echo get_post_meta($post -> ID, 'url_link', true); ?>"><?php the_title(); ?></a></h3>
+							<?php the_content(); ?>
 						</div>
 					</div>
-					<!-- single service -->
-					<div class="col-sm-6 col-md-4">
-						<div class="services-tiem">
-							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/services/2.png" alt="" />
-							<h3><a href="#">Sustainability</a></h3>
-							<p>Dynamically fabricate innovative products and distributed web services. Distinctively pontificate.</p>
-						</div>
-					</div>
-					<!-- single service -->
-					<div class="col-sm-6 col-md-4">
-						<div class="services-tiem">
-							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/services/3.png" alt="" />
-							<h3><a href="#">Web Design</a></h3>
-							<p>Dynamically fabricate innovative products and distributed web services. Distinctively pontificate.</p>
-						</div>
-					</div>
-					<!-- single service -->
-					<div class="col-sm-6 col-md-4">
-						<div class="services-tiem">
-							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/services/4.png" alt="" />
-							<h3><a href="#">Web Development</a></h3>
-							<p>Dynamically fabricate innovative products and distributed web services. Distinctively pontificate.</p>
-						</div>
-					</div>
-					<!-- single service -->
-					<div class="col-sm-6 col-md-4">
-						<div class="services-tiem">
-							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/services/5.png" alt="" />
-							<h3><a href="#">Branding Design</a></h3>
-							<p>Dynamically fabricate innovative products and distributed web services. Distinctively pontificate.</p>
-						</div>
-					</div>
-					<!-- single service -->
-					<div class="col-sm-6 col-md-4">
-						<div class="services-tiem">
-							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/services/6.png" alt="" />
-							<h3><a href="#">Marketing </a></h3>
-							<p>Dynamically fabricate innovative products and distributed web services. Distinctively pontificate.</p>
-						</div>
-					</div>
+					<?php endwhile; wp_reset_query(); ?>
 				</div>
 			</div>
 		</section><!-- end services section -->

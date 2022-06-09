@@ -85,5 +85,16 @@ function neuron_register_post_type() {
             'show_ui' => true 
         ),
     );
+
+    register_post_type('services', array(
+        'labels' => array(
+            'name' => __('Services'),
+            'singular_name' => __('service')
+            ),
+            'supports' => array( 'title', 'editor', 'thumbnail', 'custom-fields', 'page-attributes' ),
+            'public' => false,
+            'show_ui' => true 
+        ),
+    );
 }
 add_action( 'init', 'neuron_register_post_type' );
