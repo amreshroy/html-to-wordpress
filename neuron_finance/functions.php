@@ -72,7 +72,50 @@ function neuron_register_post_type() {
             'supports' => array( 'title', 'editor', 'thumbnail', 'custom-fields', 'page-attributes' ),
             'public' => false,
             'show_ui' => true 
-        )
+        ),
+    );
+
+    register_post_type('intro', array(
+        'labels' => array(
+            'name' => __('My Intro'),
+            'singular_name' => __('intro')
+            ),
+            'supports' => array( 'title', 'editor', 'thumbnail', 'page-attributes' ),
+            'public' => false,
+            'show_ui' => true 
+        ),
+    );
+
+    register_post_type('services', array(
+        'labels' => array(
+            'name' => __('Services'),
+            'singular_name' => __('service')
+            ),
+            'supports' => array( 'title', 'editor', 'thumbnail', 'custom-fields', 'page-attributes' ),
+            'public' => false,
+            'show_ui' => true 
+        ),
     );
 }
 add_action( 'init', 'neuron_register_post_type' );
+
+// Register widget area.
+function neuron_widgets_init() {
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Footer Sidebar 1', 'neuron' ),
+			'id'            => 'sidebar',
+			'description'   => esc_html__( 'Add footer widgets here', 'neuron' ),
+			'before_widget' => '<div id="%1$s" class="footer-widget about-us %2$s">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h3 class="widget-title">',
+			'after_title'   => '</h3>',
+		)
+	);
+}
+add_action( 'widgets_init', 'neuron_widgets_init' );
+
+// Disables the block editor from managing widgets in the Gutenberg plugin.
+add_filter( 'gutenberg_use_widgets_block_editor', '__return_false' );
+// Disables the block editor from managing widgets.
+add_filter( 'use_widgets_block_editor', '__return_false' );
