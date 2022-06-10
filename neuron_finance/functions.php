@@ -104,9 +104,9 @@ function neuron_widgets_init() {
 	register_sidebar(
 		array(
 			'name'          => esc_html__( 'Footer Sidebar 1', 'neuron' ),
-			'id'            => 'sidebar-1',
+			'id'            => 'sidebar',
 			'description'   => esc_html__( 'Add footer widgets here', 'neuron' ),
-			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'before_widget' => '<div id="%1$s" class="footer-widget about-us %2$s">',
 			'after_widget'  => '</div>',
 			'before_title'  => '<h3 class="widget-title">',
 			'after_title'   => '</h3>',

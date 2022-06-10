@@ -263,9 +263,7 @@
 					<div class="row">
 						<!-- start single footer widget -->
 						<div class="col-sm-6 col-md-4">
-							<div class="footer-widget about-us">
-							<?php echo dynamic_sidebar('sidebar-1'); ?>
-							</div>
+							<?php echo dynamic_sidebar('sidebar'); ?>
 						</div> <!--end single footer widget -->
 						
 						<!-- start single footer widget -->
