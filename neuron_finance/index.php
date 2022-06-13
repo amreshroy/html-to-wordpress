@@ -263,12 +263,13 @@
 					<div class="row">
 						<!-- start single footer widget -->
 						<div class="col-sm-6 col-md-4">
-							<?php echo dynamic_sidebar('sidebar'); ?>
+							<?php echo dynamic_sidebar('widget-1'); ?>
 						</div> <!--end single footer widget -->
 						
 						<!-- start single footer widget -->
 						<div class="col-sm-6 col-md-2">
-							<div class="footer-widget usefull-link">
+							<?php echo dynamic_sidebar('widget-2'); ?>
+							<!-- <div class="footer-widget usefull-link">
 								<h3>Useful Links</h3>
 								<ul> 
 									<li><a href="#"><i class="fa fa-angle-right"></i>About Us</a></li>
@@ -279,7 +280,7 @@
 									<li><a href="#"><i class="fa fa-angle-right"></i>Privacy Policy</a></li>
 									<li><a href="#"><i class="fa fa-angle-right"></i>Blog</a></li>
 								</ul>
-							</div>
+							</div> -->
 						</div><!-- end single footer widget -->
 						
 						<!-- start single footer widget -->
