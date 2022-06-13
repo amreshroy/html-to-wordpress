@@ -103,10 +103,22 @@ add_action( 'init', 'neuron_register_post_type' );
 function neuron_widgets_init() {
 	register_sidebar(
 		array(
-			'name'          => esc_html__( 'Footer Sidebar 1', 'neuron' ),
-			'id'            => 'sidebar',
+			'name'          => esc_html__( 'Footer Widget 1', 'neuron' ),
+			'id'            => 'widget-1',
 			'description'   => esc_html__( 'Add footer widgets here', 'neuron' ),
-			'before_widget' => '<div id="%1$s" class="footer-widget about-us %2$s">',
+			'before_widget' => '<div id="%1$s" class="footer-widget about-us %2$s online-card">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h3 class="widget-title">',
+			'after_title'   => '</h3>',
+		)
+	);
+
+    register_sidebar(
+		array(
+			'name'          => esc_html__( 'Footer Widget 2', 'neuron' ),
+			'id'            => 'widget-2',
+			'description'   => esc_html__( 'Add footer widgets here', 'neuron' ),
+			'before_widget' => '<div id="%1$s" class="footer-widget usefull-link %2$s">',
 			'after_widget'  => '</div>',
 			'before_title'  => '<h3 class="widget-title">',
 			'after_title'   => '</h3>',
