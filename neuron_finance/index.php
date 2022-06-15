@@ -276,22 +276,7 @@
 						
 						<!-- start single footer widget -->
 						<div class="col-sm-6 col-md-3">
-							<div class="footer-widget news-letter">
-								<h3>NewsLetter Subscription</h3>
-								<p>Subscribe to get the latest news, update and offer information. Don't worry, we won't send spam!</p>
-
-								<form class="subscribe-form mailchimp" method="post">
-                                    <div class="clearfix">
-                                        <div class="input-wrapper">
-                                          <label class="sr-only" for="email">Email</label>
-                                          <input id="subscribeEmail" type="email" name="subscribeEmail" class="validate form-control" placeholder="Your Email Please!">
-                                          <button type="submit"><i class="fa fa-arrow-circle-right"></i></button>
-                                        </div>
-                                    </div>
-                                    <!-- to showing success messages -->
-                                    <p class="subscription-success"></p>
-								</form>
-							</div><!-- /.news-letter -->
+							<?php dynamic_sidebar('widget-4'); ?>
 						</div><!-- end single footer widget -->
 					</div><!-- /.row -->
 				</div><!-- /.container -->
