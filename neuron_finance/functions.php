@@ -118,7 +118,19 @@ function neuron_widgets_init() {
 			'name'          => esc_html__( 'Footer Widget 2', 'neuron' ),
 			'id'            => 'widget-2',
 			'description'   => esc_html__( 'Add footer widgets here', 'neuron' ),
-			'before_widget' => '<div id="%1$s" class="footer-widget usefull-link %2$s">',
+			'before_widget' => '<div id="%1$s" class="footer-widget %2$s usefull-link ">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h3 class="widget-title">',
+			'after_title'   => '</h3>',
+		)
+	);
+
+    register_sidebar(
+		array(
+			'name'          => esc_html__( 'Footer Widget 3', 'neuron' ),
+			'id'            => 'widget-3',
+			'description'   => esc_html__( 'Add footer widgets here', 'neuron' ),
+			'before_widget' => '<div id="%1$s" class="footer-widget %2$s latest-post">',
 			'after_widget'  => '</div>',
 			'before_title'  => '<h3 class="widget-title">',
 			'after_title'   => '</h3>',
@@ -126,6 +138,23 @@ function neuron_widgets_init() {
 	);
 }
 add_action( 'widgets_init', 'neuron_widgets_init' );
+
+// Footer Recent Post Shortcode
+function recent_post_shortcode(){
+    $att = array('posts_per_page' => 3, 'post_type' => 'post');
+    $q = new WP_Query($att);
+    $list = '<ul>';
+    while($q->have_posts()) : $q->the_post();
+    $list .= '<li>'.get_the_post_thumbnail(get_the_ID(), 'thumbnail').
+                '<p><a href="'.get_permalink().'">'.wp_trim_words( get_the_title(), 6).'</a></p>
+                <span>'.get_the_date('d F Y', get_the_ID()).'</span> 
+            </li>';
+    endwhile;
+    $list .= '</ul>';
+    wp_reset_query();
+    return $list;
+}
+add_shortcode('footer_recent_post', 'recent_post_shortcode');
 
 // Disables the block editor from managing widgets in the Gutenberg plugin.
 add_filter( 'gutenberg_use_widgets_block_editor', '__return_false' );
