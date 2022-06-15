@@ -120,10 +120,8 @@
 		<section class="slider-area">
 			<?php
 			global $post;
-
 			$args = array('posts_per_page' => 5, 'post_type' => 'slide', 'orderby' => 'menu_order', 'order' => 'ASC');
 			$slide_posts = new WP_Query($args);
-
 			while ( $slide_posts->have_posts() ) : $slide_posts->the_post();  
 			?>
 				<div style="background-image:url(<?php the_post_thumbnail_url('large'); ?>);" class="homepage-slider">
@@ -222,7 +220,7 @@
 					<!-- single service -->
 					<?php
 					global $post;
-					$args = array('post_per_page' => 6, 'post_type' => 'services', 'orderby' => 'menu_order' , 'order' => 'ASC');
+					$args = array('posts_per_page' => 6, 'post_type' => 'services', 'orderby' => 'menu_order' , 'order' => 'ASC');
 					$services_post  = new WP_Query($args);
 					while ( $services_post->have_posts() ) : $services_post->the_post(); ?>
 					<div class="col-sm-6 col-md-4">
@@ -263,72 +261,22 @@
 					<div class="row">
 						<!-- start single footer widget -->
 						<div class="col-sm-6 col-md-4">
-							<?php echo dynamic_sidebar('widget-1'); ?>
+							<?php dynamic_sidebar('widget-1'); ?>
 						</div> <!--end single footer widget -->
 						
 						<!-- start single footer widget -->
 						<div class="col-sm-6 col-md-2">
-							<?php echo dynamic_sidebar('widget-2'); ?>
-							<!-- <div class="footer-widget usefull-link">
-								<h3>Useful Links</h3>
-								<ul> 
-									<li><a href="#"><i class="fa fa-angle-right"></i>About Us</a></li>
-									<li><a href="#"><i class="fa fa-angle-right"></i>Services</a></li>
-									<li><a href="#"><i class="fa fa-angle-right"></i>Works</a></li>
-									<li><a href="#"><i class="fa fa-angle-right"></i>Contact</a></li>
-									<li><a href="#"><i class="fa fa-angle-right"></i>Support</a></li>
-									<li><a href="#"><i class="fa fa-angle-right"></i>Privacy Policy</a></li>
-									<li><a href="#"><i class="fa fa-angle-right"></i>Blog</a></li>
-								</ul>
-							</div> -->
+							<?php dynamic_sidebar('widget-2'); ?>
 						</div><!-- end single footer widget -->
 						
 						<!-- start single footer widget -->
 						<div class="col-sm-6 col-md-3">
-							<div class="footer-widget latest-post">
-								<h3>Latest Post</h3>
-								<ul>
-									<li>
-										<img src="<?php echo get_template_directory_uri(); ?>/assets/img/latest-post/1.png" alt="" />
-										<p><a href="#">Headset No Longer Wire For Sound</a></p>
-										<span>12 May 2016</span>
-										
-									</li>
-									<li>
-										<img src="<?php echo get_template_directory_uri(); ?>/assets/img/latest-post/2.png" alt="" />
-										<p><a href="#">Headset No Longer Wire For Sound</a></p>
-										<span>12 May 2016</span>
-										
-									</li>
-									<li>
-										<img src="<?php echo get_template_directory_uri(); ?>/assets/img/latest-post/3.png" alt="" />
-										<p><a href="#">Headset No Longer Wire For Sound</a></p>
-										<span>12 May 2016</span>
-										
-									</li>
-									
-								</ul>
-							</div>
+							<?php dynamic_sidebar('widget-3'); ?>
 						</div><!-- end single footer widget -->
 						
 						<!-- start single footer widget -->
 						<div class="col-sm-6 col-md-3">
-							<div class="footer-widget news-letter">
-								<h3>NewsLetter Subscription</h3>
-								<p>Subscribe to get the latest news, update and offer information. Don't worry, we won't send spam!</p>
-
-								<form class="subscribe-form mailchimp" method="post">
-                                    <div class="clearfix">
-                                        <div class="input-wrapper">
-                                          <label class="sr-only" for="email">Email</label>
-                                          <input id="subscribeEmail" type="email" name="subscribeEmail" class="validate form-control" placeholder="Your Email Please!">
-                                          <button type="submit"><i class="fa fa-arrow-circle-right"></i></button>
-                                        </div>
-                                    </div>
-                                    <!-- to showing success messages -->
-                                    <p class="subscription-success"></p>
-								</form>
-							</div><!-- /.news-letter -->
+							<?php dynamic_sidebar('widget-4'); ?>
 						</div><!-- end single footer widget -->
 					</div><!-- /.row -->
 				</div><!-- /.container -->
