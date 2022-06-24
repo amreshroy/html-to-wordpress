@@ -9,8 +9,7 @@
 			global $post;
 			$args = array('posts_per_page' => 5, 'post_type' => 'slide', 'orderby' => 'menu_order', 'order' => 'ASC');
 			$slide_posts = new WP_Query($args);
-			while ( $slide_posts->have_posts() ) : $slide_posts->the_post();  
-			?>
+			while ( $slide_posts->have_posts() ) : $slide_posts->the_post(); ?>
 				<div style="background-image:url(<?php the_post_thumbnail_url('large'); ?>);" class="homepage-slider">
 					<div class="display-table">
 						<div class="display-table-cell">
