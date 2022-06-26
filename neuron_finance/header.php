@@ -8,7 +8,7 @@
 		<?php wp_head(); ?>
 	</head>
 
-	<body>
+	<body <?php body_class(); ?>>
         <header>
 			<!-- start top bar -->
 			<div class="header-top-area">

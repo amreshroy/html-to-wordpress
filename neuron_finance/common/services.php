@@ -1,5 +1,5 @@
 <!-- ::::::::::::::::::::: start services section:::::::::::::::::::::::::: -->
-<section class="section-padding darker-bg">
+<section class="section-padding <?php if(!is_page(26)) : ?>darker-bg <?php endif; ?>">
     <div class="container">
         <div class="row">
             <div class="col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6">
