@@ -32,11 +32,13 @@ Template Name: Portfolio Template
 					</div>
 				</div>
 			</div>
-			<?php global $post;
-			$args = array('posts_per_page' => 6, 'post_type' => 'portfolio', 'orderby' => 'menu_order' );
-			$portfolio_post = new WP_Query($args);
-			while ($portfolio_post -> have_posts()) : $portfolio_post -> the_post(); ?>
+
 			<div class="row">
+				<?php global $post;
+				$args = array('posts_per_page' => 6, 'post_type' => 'portfolio', 'orderby' => 'menu_order' );
+				$portfolio_post = new WP_Query($args);
+				while ($portfolio_post -> have_posts()) : $portfolio_post -> the_post(); ?>
+
 				<!-- portfolio item -->
 				<div class="col-sm-6 col-md-4">
 					<div class="portfolio-item">
@@ -47,8 +49,8 @@ Template Name: Portfolio Template
 						</div><!-- /.portfolio-details -->
 					</div><!-- /.portfolio-item -->
 				</div>
+				<?php endwhile; wp_reset_query(); ?>
 			</div>
-			<?php endwhile; wp_reset_query(); ?>
 		</div>
 	</section>	
 	
