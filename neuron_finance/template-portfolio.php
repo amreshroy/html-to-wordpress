@@ -18,6 +18,7 @@ Template Name: Portfolio Template
             </div>
         </div>
     </section><!-- end breadcrumb -->
+	<?php endwhile; ?>
 
     <!-- ::::::::::::::::::::: start portfolio section:::::::::::::::::::::::::: -->
 	<section class="section-padding">
@@ -31,77 +32,25 @@ Template Name: Portfolio Template
 					</div>
 				</div>
 			</div>
-		
+			<?php global $post;
+			$args = array('posts_per_page' => 6, 'post_type' => 'portfolio', 'orderby' => 'menu_order' );
+			$portfolio_post = new WP_Query($args);
+			while ($portfolio_post -> have_posts()) : $portfolio_post -> the_post(); ?>
 			<div class="row">
 				<!-- portfolio item -->
 				<div class="col-sm-6 col-md-4">
 					<div class="portfolio-item">
-						<img src="assets/img/portfolio/1.jpg" alt="" />
+						<?php the_post_thumbnail('large'); ?>
 						<div class="portfolio-details">
-							<h3><a href="portfolio-details.html">Finaco Accounts</a></h3>
-							<a href="#">Accounts</a>
+							<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+							<?php echo get_post_meta ($post -> ID, 'subtitle', true); ?>
 						</div><!-- /.portfolio-details -->
 					</div><!-- /.portfolio-item -->
 				</div>
-				
-				<!-- portfolio item -->
-				<div class="col-sm-6 col-md-4">
-					<div class="portfolio-item">
-						<img src="assets/img/portfolio/2.jpg" alt="" />
-						<div class="portfolio-details">
-							<h3><a href="portfolio-details.html">Finaco Accounts</a></h3>
-							<a href="#">Accounts</a>
-						</div><!-- /.portfolio-details -->
-					</div><!-- /.portfolio-item -->
-				</div>
-				
-				<!-- portfolio item -->
-				<div class="col-sm-6 col-md-4">
-					<div class="portfolio-item">
-						<img src="assets/img/portfolio/3.jpg" alt="" />
-						<div class="portfolio-details">
-							<h3><a href="portfolio-details.html">Finaco Accounts</a></h3>
-							<a href="#">Accounts</a>
-						</div><!-- /.portfolio-details -->
-					</div><!-- /.portfolio-item -->
-				</div>
-				
-				<!-- portfolio item -->
-				<div class="col-sm-6 col-md-4">
-					<div class="portfolio-item">
-						<img src="assets/img/portfolio/3.jpg" alt="" />
-						<div class="portfolio-details">
-							<h3><a href="portfolio-details.html">Finaco Accounts</a></h3>
-							<a href="#">Accounts</a>
-						</div><!-- /.portfolio-details -->
-					</div><!-- /.portfolio-item -->
-				</div>
-				
-				<!-- portfolio item -->
-				<div class="col-sm-6 col-md-4">
-					<div class="portfolio-item">
-						<img src="assets/img/portfolio/1.jpg" alt="" />
-						<div class="portfolio-details">
-							<h3><a href="portfolio-details.html">Finaco Accounts</a></h3>
-							<a href="#">Accounts</a>
-						</div><!-- /.portfolio-details -->
-					</div><!-- /.portfolio-item -->
-				</div>
-				
-				<!-- portfolio item -->
-				<div class="col-sm-6 col-md-4">
-					<div class="portfolio-item">
-						<img src="assets/img/portfolio/2.jpg" alt="" />
-						<div class="portfolio-details">
-							<h3><a href="portfolio-details.html">Finaco Accounts</a></h3>
-							<a href="#">Accounts</a>
-						</div><!-- /.portfolio-details -->
-					</div><!-- /.portfolio-item -->
-				</div>
-				
 			</div>
+			<?php endwhile; wp_reset_query(); ?>
 		</div>
-	</section>
+	</section>	
 	
 	<!-- ::::::::::::::::::::: testimonial section:::::::::::::::::::::::::: -->
 	<section class="testimonial text-center">
@@ -115,5 +64,5 @@ Template Name: Portfolio Template
 			</div>
 		</div>
 	</section><!-- ./end testimonial section -->
-    <?php endwhile; ?>
+    
 <?php get_footer(); ?>
