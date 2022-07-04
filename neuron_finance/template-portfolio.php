@@ -27,7 +27,7 @@ Template Name: Portfolio Template
 				<div class="col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6">
 					<!-- portfolio title -->
 					<div class="template-title text-center">
-						<h2>Check Otut Our Latest portfolios</h2>
+						<h2>Check Out Our Latest portfolios</h2>
 						<p>Holisticly transform excellent systems rather than collaborative leadership. Credibly pursue compelling outside the box.</p>
 					</div>
 				</div>

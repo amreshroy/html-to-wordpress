@@ -177,6 +177,8 @@ function recent_post_shortcode(){
 }
 add_shortcode('footer_recent_post', 'recent_post_shortcode');
 
+require get_template_directory() .'/inc/cs-framework/codestar-framework.php';
+
 // Disables the block editor from managing widgets in the Gutenberg plugin.
 add_filter( 'gutenberg_use_widgets_block_editor', '__return_false' );
 // Disables the block editor from managing widgets.
