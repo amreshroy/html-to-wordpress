@@ -177,9 +177,61 @@ function recent_post_shortcode(){
 }
 add_shortcode('footer_recent_post', 'recent_post_shortcode');
 
-require get_template_directory() .'/inc/cs-framework/codestar-framework.php';
-
 // Disables the block editor from managing widgets in the Gutenberg plugin.
 add_filter( 'gutenberg_use_widgets_block_editor', '__return_false' );
 // Disables the block editor from managing widgets.
 add_filter( 'use_widgets_block_editor', '__return_false' );
+
+/**
+ * Get the bootstrap!
+ * (Update path to use cmb2 or CMB2, depending on the name of the folder.
+ * Case-sensitive is important on some systems.)
+ */
+require_once __DIR__ . '/inc/cmb2/init.php';
+
+add_action( 'cmb2_admin_init', 'cmb2_sample_metaboxes' );
+/**
+ * Define the metabox and field configurations.
+ */
+function cmb2_sample_metaboxes() {
+
+	/**
+	 * Initiate the metabox
+	 */
+	$cmb = new_cmb2_box( array(
+		'id'            => 'portfolio_details',
+		'title'         => __( 'Portfolio Details', 'cmb2' ),
+		'object_types'  => array( 'portfolio', ), // Post type
+		'context'       => 'normal',
+		'priority'      => 'high',
+		'show_names'    => true, // Show field names on the left
+		// 'cmb_styles' => false, // false to disable the CMB stylesheet
+		// 'closed'     => true, // Keep the metabox closed by default
+	) );
+
+	$blog_group_id = $cmb->add_field( array(
+		'id'          => 'blog_group',
+		'type'        => 'group',
+		'repeatable'  => true,
+		'options'     => array(
+			'group_title'   => 'Post {#}',
+			'add_button'    => 'Add Another Fields',
+			'remove_button' => 'Remove Field',
+			'closed'        => true,  // Repeater fields closed by default - neat & compact.
+			'sortable'      => true,  // Allow changing the order of repeated groups.
+		),
+	) );
+	$cmb->add_group_field( $blog_group_id, array(
+		'name' => 'Categories Name',
+		'desc' => 'Enter the Category title for the link text.',
+		'id'   => 'title',
+		'type' => 'text',
+		'default' => 'Uncategories'
+	) );
+	$cmb->add_group_field( $blog_group_id, array(
+		'name' => 'Category URL',
+		'desc' => 'Enter the url of the Category.',
+		'id'   => 'url',
+		'type' => 'text_url',
+	) );
+}
