@@ -22,7 +22,7 @@
 				<div class="col-md-8">
 					<!-- single portfolio images -->
 					<div class="single-portfolio-images">
-						<img class="img-responsive" src="assets/img/portfolio-details.jpg" alt="" />
+						<img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/assets/img/portfolio-details.jpg" alt="" />
 					</div>
 				</div>
 				<div class="col-md-4">

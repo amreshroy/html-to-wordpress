@@ -209,12 +209,36 @@ function cmb2_sample_metaboxes() {
 		// 'closed'     => true, // Keep the metabox closed by default
 	) );
 
+	// Regular text field
+	$cmb->add_field( array(
+		'name'       => __( 'Category Name', 'cmb2' ),
+		'desc'       => __( 'field description (optional)', 'cmb2' ),
+		'id'         => 'yourprefix_text',
+		'type'       => 'text',
+		'default'	 => 'Uncategorized',
+		'show_on_cb' => 'cmb2_hide_if_no_cats', // function should return a bool value
+		// 'sanitization_cb' => 'my_custom_sanitization', // custom sanitization callback parameter
+		// 'escape_cb'       => 'my_custom_escaping',  // custom escaping callback parameter
+		// 'on_front'        => false, // Optionally designate a field to wp-admin only
+		// 'repeatable'      => true,
+	) );
+
+	// URL text field
+	$cmb->add_field( array(
+		'name' => __( 'Category URL', 'cmb2' ),
+		'desc' => __( 'Add Category Url Link', 'cmb2' ),
+		'id'   => 'yourprefix_url',
+		'type' => 'text_url',
+		// 'protocols' => array('http', 'https', 'ftp', 'ftps', 'mailto', 'news', 'irc', 'gopher', 'nntp', 'feed', 'telnet'), // Array of allowed protocols
+		// 'repeatable' => true,
+	) );
+
 	$blog_group_id = $cmb->add_field( array(
 		'id'          => 'blog_group',
 		'type'        => 'group',
 		'repeatable'  => true,
 		'options'     => array(
-			'group_title'   => 'Post {#}',
+			'group_title'   => 'Others Details {#}',
 			'add_button'    => 'Add Another Fields',
 			'remove_button' => 'Remove Field',
 			'closed'        => true,  // Repeater fields closed by default - neat & compact.
@@ -222,16 +246,13 @@ function cmb2_sample_metaboxes() {
 		),
 	) );
 	$cmb->add_group_field( $blog_group_id, array(
-		'name' => 'Categories Name',
-		'desc' => 'Enter the Category title for the link text.',
+		'name' => 'Title',
 		'id'   => 'title',
 		'type' => 'text',
-		'default' => 'Uncategories'
 	) );
 	$cmb->add_group_field( $blog_group_id, array(
-		'name' => 'Category URL',
-		'desc' => 'Enter the url of the Category.',
-		'id'   => 'url',
-		'type' => 'text_url',
+		'name' => 'Value Info',
+		'id'   => 'value',
+		'type' => 'text',
 	) );
 }
