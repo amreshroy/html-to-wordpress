@@ -182,11 +182,6 @@ add_filter( 'gutenberg_use_widgets_block_editor', '__return_false' );
 // Disables the block editor from managing widgets.
 add_filter( 'use_widgets_block_editor', '__return_false' );
 
-/**
- * Get the bootstrap!
- * (Update path to use cmb2 or CMB2, depending on the name of the folder.
- * Case-sensitive is important on some systems.)
- */
 require_once __DIR__ . '/inc/cmb2/init.php';
 
 add_action( 'cmb2_admin_init', 'cmb2_sample_metaboxes' );
@@ -213,24 +208,26 @@ function cmb2_sample_metaboxes() {
 	$cmb->add_field( array(
 		'name'       => __( 'Category Name', 'cmb2' ),
 		'desc'       => __( 'field description (optional)', 'cmb2' ),
-		'id'         => 'yourprefix_text',
+		'id'         => 'category_text',
 		'type'       => 'text',
 		'default'	 => 'Uncategorized',
 		'show_on_cb' => 'cmb2_hide_if_no_cats', // function should return a bool value
-		// 'sanitization_cb' => 'my_custom_sanitization', // custom sanitization callback parameter
-		// 'escape_cb'       => 'my_custom_escaping',  // custom escaping callback parameter
-		// 'on_front'        => false, // Optionally designate a field to wp-admin only
-		// 'repeatable'      => true,
 	) );
 
 	// URL text field
 	$cmb->add_field( array(
 		'name' => __( 'Category URL', 'cmb2' ),
 		'desc' => __( 'Add Category Url Link', 'cmb2' ),
-		'id'   => 'yourprefix_url',
+		'id'   => 'category_url',
 		'type' => 'text_url',
-		// 'protocols' => array('http', 'https', 'ftp', 'ftps', 'mailto', 'news', 'irc', 'gopher', 'nntp', 'feed', 'telnet'), // Array of allowed protocols
-		// 'repeatable' => true,
+	) );
+
+	// Button URL
+	$cmb->add_field( array(
+		'name' => __( 'Button URL', 'cmb2' ),
+		'desc' => __( 'Add Button Url Link', 'cmb2' ),
+		'id'   => 'button_url',
+		'type' => 'text_url',
 	) );
 
 	$blog_group_id = $cmb->add_field( array(
