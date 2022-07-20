@@ -182,6 +182,7 @@ add_filter( 'gutenberg_use_widgets_block_editor', '__return_false' );
 // Disables the block editor from managing widgets.
 add_filter( 'use_widgets_block_editor', '__return_false' );
 
+// CMB2 Metabox Added
 require_once __DIR__ . '/inc/cmb2/init.php';
 
 add_action( 'cmb2_admin_init', 'cmb2_sample_metaboxes' );
@@ -220,6 +221,32 @@ function cmb2_sample_metaboxes() {
 		'desc' => __( 'Add Category Url Link', 'cmb2' ),
 		'id'   => 'category_url',
 		'type' => 'text_url',
+	) );
+
+	// Add Image Field
+	$cmb->add_field( array(
+		'name'    => 'Portfolio Image',
+		'desc'    => 'Upload an image or enter an URL.',
+		'id'      => 'portfolio_image',
+		'type'    => 'file',
+		// Optional:
+		'options' => array(
+			'url' => false, // Hide the text input for the url
+		),
+		'text'    => array(
+			'add_upload_file_text' => 'Add File' // Change upload button text. Default: "Add or Upload File"
+		),
+		// query_args are passed to wp.media's library query.
+		'query_args' => array(
+			// 'type' => 'application/pdf', // Make library only display PDFs.
+			// Or only allow gif, jpg, or png images
+			'type' => array(
+				'image/gif',
+				'image/jpeg',
+				'image/png',
+			),
+		),
+		'preview_size' => 'large', // Image size to use when previewing in the admin.
 	) );
 
 	// Button URL

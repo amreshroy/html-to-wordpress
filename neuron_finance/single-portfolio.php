@@ -3,6 +3,7 @@
 	// Grab the metadata from the database
 	$category_text  = get_post_meta( get_the_ID(), 'category_text', true );
 	$category_url  = get_post_meta( get_the_ID(), 'category_url', true );
+	$portfolio_image  = get_post_meta( get_the_ID(), 'portfolio_image', true );
 	$button_url  = get_post_meta( get_the_ID(), 'button_url', true );
 	$entries = get_post_meta( get_the_ID(), 'blog_group', true );
 
@@ -45,27 +46,23 @@
 				<div class="col-md-8">
 					<!-- single portfolio images -->
 					<div class="single-portfolio-images">
-						<img class="img-responsive" src="<?php echo get_template_directory_uri(); ?>/assets/img/portfolio-details.jpg" alt="" />
+					<?php if(!empty($portfolio_image)) : ?>
+						<img class="img-responsive" src="<?php echo esc_html( $portfolio_image ); ?>" alt="" />
+						<?php else:	the_post_thumbnail('large'); endif;?>
 					</div>
 				</div>
 				<div class="col-md-4">
 					<!-- single portfolio info -->
 					<div class="single-portfolio-inner">
 						<header class="single-portfolio-title">
-							<a href="<?php echo esc_html( $category_url ); ?>"><?php echo esc_html( $category_text ); ?></a>
-							
+							<a href="<?php echo esc_html( $category_url ); ?>"><?php echo esc_html( $category_text ); ?></a>	
 						</header>
 						<div class="portfolio-details-panel">
-							<?php the_content(); ?>
-							
-							<ul class="portfolio-meta">
-								
-								<?php foreach ($entries as $data) : ?>
+							<?php the_content(); ?>	
+							<ul class="portfolio-meta">	
+								<?php if(!empty($entries)) : foreach ($entries as $data) : ?>
 								<li><span> <?php echo $data['title']; ?> </span> <?php echo $data['value']; ?></li>
-								<?php endforeach; ?>
-								<!-- <li><span> Created by </span> John Doe</li>
-								<li><span> Completed on </span> 17 Oct 2016</li>
-								<li><span> Skills </span> HTML5 / PHP / CSS3</li> -->
+								<?php endforeach; endif;?>
 								<li><span> Share </span> <a href="#"><i class="fa fa-facebook"></i></a> <a href="#"><i class="fa fa-twitter"></i></a> <a href="#"><i class="fa fa-google-plus"></i></a> <a href="#"><i class="fa fa-pinterest"></i></a></li>
 							</ul>
 						</div>
