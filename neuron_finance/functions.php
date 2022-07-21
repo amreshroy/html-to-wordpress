@@ -101,7 +101,7 @@ function neuron_register_post_type() {
 			'name' => __('Portfolio'),
 			'singular_name' => __('portfolio')
 			),
-			'supports' => array( 'title', 'editor', 'thumbnail', 'custom-fields', 'page-attributes' ),
+			'supports' => array( 'title', 'editor', 'thumbnail', 'page-attributes' ),
 			'public' => true 
 		),
     );
