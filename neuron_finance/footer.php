@@ -30,7 +30,7 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-md-12">
-							<p>Copyright@2017 Neuron Finance Inc. All Rights Reserved. Beautiful WordPress Theme By <a href="#">TrendyTheme</a></p>
+							<p>Copyright@2022. All Rights Reserved. Beautiful WordPress Theme By <a href="#">ACR</a></p>
 						</div>
 					</div><!-- /.row -->
 				</div><!-- /.container -->

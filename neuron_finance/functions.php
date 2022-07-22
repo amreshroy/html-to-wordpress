@@ -28,6 +28,8 @@ function neuron_setup() {
 
 	add_theme_support( 'post-thumbnails' );
 
+	add_image_size('neuron-blog-thumbnails', 370, 260, true);
+
 	register_nav_menus(
 		array(
 			'menu-1' => esc_html__( 'Primary', 'neuron' ),
