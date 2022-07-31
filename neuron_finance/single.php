@@ -118,36 +118,6 @@
                             <h2>write your comment</h2>
                               <?php comments_template(); ?>
                         </div>
-                        <form class="contact-form" id="contactForm" name="contact-form" action="sendemail.php" method="POST">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label class="sr-only" for="name">Name</label>
-                                        <input type="text" name="name" class="form-control" id="name" placeholder="Your Name">
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label class="sr-only" for="email">Email</label>
-                                        <input type="email" name="email" class="form-control" id="email" placeholder="Your Email">
-                                    </div>
-                                </div>
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <label class="sr-only" for="subject">Subject</label>
-                                        <input type="text" name="subject" class="form-control" id="subject" placeholder="Your Subject">
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="sr-only" for="message">Message</label>
-                                <textarea name="message" class="form-control" id="message" placeholder="Your Message"></textarea>
-                            </div>
-                            <div class="text-right">
-                                <button type="submit" name="submit" class="btn btn-primary input-btn"><span>Submit</span></button>
-                            </div>
-                        </form>
                     </div><!-- /.end comments wrapper -->
                     <?php endif; ?>
 
