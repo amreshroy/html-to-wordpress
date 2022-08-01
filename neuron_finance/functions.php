@@ -15,8 +15,13 @@ function neuron_theme_files(){
     // wp_enqueue_script('ajaxchimp', get_template_directory_uri() .'/assets/js/ajaxchimp.js', array('jquery'), '1.0', true);
     // wp_enqueue_script('ajaxchimp-config', get_template_directory_uri() .'/assets/js/ajaxchimp-config.js', array('jquery'), '1.0', true);
     wp_enqueue_script('theme-script', get_template_directory_uri() .'/assets/js/script.js', array('jquery'), '1.0', true);
+	
+	if ( is_singular() && comments_open() && get_option('thread_comments') ){
+		wp_enqueue_script('comment-reply');
+	}
 }
 add_action('wp_enqueue_scripts', 'neuron_theme_files');
+
 
 function neuron_setup() {
 	load_theme_textdomain( 'neuron', get_template_directory() . '/languages' );

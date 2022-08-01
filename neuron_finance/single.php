@@ -115,118 +115,12 @@
                     <!-- start comments wrapper -->
                     <div class="comments-wrapper">
                         <div class="single-post-title comment-title">
-                            <h2>write your comment</h2>
                               <?php comments_template(); ?>
                         </div>
                     </div><!-- /.end comments wrapper -->
                     <?php endif; ?>
 
-                    <div class="comments-responsed-wrapper">
-                        <div class="single-post-title comment-title">
-                            <h2>Commets (5)</h2>
-                        </div>
-                        <!-- post comments -->
-                        <div class="comments-media">
-                            <!-- 1st comment -->
-                            <ol>
-                                <li>
-                                    <div class="comment-inner">
-                                        <div class="comment-avatar">
-                                            <img src="assets/img/comments/1.jpg" alt="" />
-                                        </div>
-                                        <div class="comment-section">
-                                            <header>
-                                                <h2>Josef Milton</h2>
-                                                <span> 15 minutes ago </span>
-                                            </header>
-                                            <div class="comment-content">
-                                                <p>The challenge is to ensure that when a client visits your website they feel positive about your company. </p>
-                                                <a href="#" class="btn-comment-replay">Replay</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                    <ul>
-                                        <li>
-                                            <div class="comment-inner">
-                                                <div class="comment-avatar">
-                                                    <img src="assets/img/comments/2.jpg" alt="" />
-                                                </div>
-                                                <div class="comment-section">
-                                                    <header>
-                                                        <h2>Jonathon Bin</h2>
-                                                        <span> 10 minutes ago </span>
-                                                    </header>
-                                                    <div class="comment-content">
-                                                        <p>The challenge is to ensure that when a client visits your website they feel positive about your company. </p>
-                                                        <a href="#" class="btn-comment-replay">Replay</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="comment-inner">
-                                                <div class="comment-avatar">
-                                                    <img src="assets/img/comments/1.jpg" alt="" />
-                                                </div>
-                                                <div class="comment-section">
-                                                    <header>
-                                                        <h2>Josef Milton</h2>
-                                                        <span> 5 minutes ago </span>
-                                                    </header>
-                                                    <div class="comment-content">
-                                                        <p>The challenge is to ensure that when a client visits your website they feel positive about your company. </p>
-                                                        <a href="#" class="btn-comment-replay">Replay</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ol>
-                            <!-- 2nd comment -->
-                            <ol>
-                                <li>
-                                    <div class="comment-inner">
-                                        <div class="comment-avatar">
-                                            <img src="assets/img/comments/3.jpg" alt="" />
-                                        </div>
-                                        <div class="comment-section">
-                                            <header>
-                                                <h2>Tomas Udoya</h2>
-                                                <span> 20 minutes ago </span>
-                                            </header>
-                                            <div class="comment-content">
-                                                <p>The challenge is to ensure that when a client visits your website they feel positive about your company. </p>
-                                                <a href="#" class="btn-comment-replay">Replay</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    
-                                    <ul>
-                                        <li>
-                                            <div class="comment-inner">
-                                                <div class="comment-avatar">
-                                                    <img src="assets/img/comments/2.jpg" alt="" />
-                                                </div>
-                                                <div class="comment-section">
-                                                    <header>
-                                                        <h2>Josef Milton</h2>
-                                                        <span> 15 minutes ago </span>
-                                                    </header>
-                                                    <div class="comment-content">
-                                                        <p>The challenge is to ensure that when a client visits your website they feel positive about your company. </p>
-                                                        <a href="#" class="btn-comment-replay">Replay</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </li>
-                            </ol>
-                            
-                        </div>
-                    </div>
+                    
                 </div>
             </div>
         </div>
