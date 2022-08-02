@@ -39,27 +39,37 @@
                             <div class="post-meta">
                                 <ul>
                                     <li>
-                                        <a href="#">
+                                        <a href="">
                                             <i class="fa fa-user"></i>
-                                            Ahmed Faruk
+                                            <?php the_author( 'display_name', 20 ); ?>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#">
+                                        <a href="">
                                             <i class="fa fa-tag"></i>
-                                                Marketing, Sales 
+                                            <?php 
+                                                $categories = get_the_category();
+                                                $separator = ' , ';
+                                                $output = '';
+                                                if ( ! empty( $categories ) ) {
+                                                    foreach( $categories as $category ) {
+                                                        $output .=  esc_html( $category->name). $separator;
+                                                    }
+                                                    echo trim( $output, $separator );
+                                                }
+                                            ?>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#">
+                                        <a href="">
                                             <i class="fa fa-calendar"></i>
-                                                20 Mar 2017 
+                                            <?php the_time( 'j F Y' ); ?> 
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#">
+                                        <a href="">
                                             <i class="fa fa-comment"></i>
-                                            25 Comments
+                                            <?php comments_number( 'No Comments', 'One Comment', '% Comments' ); ?>
                                         </a>
                                     </li>
                                 </ul>
@@ -102,10 +112,7 @@
                                     <span>400</span>
                                 </a></li>
                             </ul>
-                        </div><!-- /.end social link -->
-                        
-                        
-                        
+                        </div><!-- /.end social link -->     
                     </div><!-- /.end single blog content -->
                     
                     <?php
@@ -119,8 +126,6 @@
                         </div>
                     </div><!-- /.end comments wrapper -->
                     <?php endif; ?>
-
-                    
                 </div>
             </div>
         </div>

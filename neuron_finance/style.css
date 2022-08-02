@@ -1470,6 +1470,11 @@ h3#comments {
     padding-top: 20px;
     margin-bottom: 40px;
 }
+
+#cancel-comment-reply-link {
+    margin-left: 20px;
+    font-size: 20px;
+}
 /* Custom Comment Template Style End */
 
 .comments-responsed-wrapper {
