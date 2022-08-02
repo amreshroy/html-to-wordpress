@@ -15,7 +15,7 @@ function neuron_theme_files(){
     // wp_enqueue_script('ajaxchimp', get_template_directory_uri() .'/assets/js/ajaxchimp.js', array('jquery'), '1.0', true);
     // wp_enqueue_script('ajaxchimp-config', get_template_directory_uri() .'/assets/js/ajaxchimp-config.js', array('jquery'), '1.0', true);
     wp_enqueue_script('theme-script', get_template_directory_uri() .'/assets/js/script.js', array('jquery'), '1.0', true);
-	
+
 	if ( is_singular() && comments_open() && get_option('thread_comments') ){
 		wp_enqueue_script('comment-reply');
 	}
@@ -286,4 +286,74 @@ function cmb2_sample_metaboxes() {
 		'id'   => 'value',
 		'type' => 'text',
 	) );
+
+	$cmb_options = new_cmb2_box( array(
+		'id'           => 'neuron_option_metabox',
+		'title'        => esc_html__( 'Theme Options', 'neuron' ),
+		'object_types' => array( 'options-page' ),
+		'option_key'      => 'neuron_options', // The option key and admin menu page slug.
+		'icon_url'        => 'dashicons-palmtree', // Menu icon. Only applicable if 'parent_slug' is left empty.
+	) );
+
+	$cmb_options_home = $cmb_options->add_field( array(
+		'id'          => 'home_group',
+		'type'        => 'group',
+		'repeatable'  => false,
+		'options'     => array(
+			'group_title'   => 'Homepage Section Contents',
+			'closed'        => false,  // Repeater fields closed by default - neat & compact.
+		),
+	) );
+
+	$cmb_options->add_group_field( $cmb_options_home, array(
+		'title'	=> __('Homepage'),
+		'name' => __( 'Title 1', 'neuron' ),
+		'desc' => __( 'section title', 'neuron' ),
+		'id'   => 'title_text1',
+		'type' => 'text',
+		'default' => 'Welcome to the Neuron Finance bla bla',
+	) );
+
+	$cmb_options->add_group_field( $cmb_options_home, array(
+		'name'    => __( 'Description 1', 'neuron' ),
+		'desc'    => __( 'section description', 'neuron' ),
+		'id'      => 'text_description1',
+		'type'    => 'textarea',
+		'default' => '#Interactively simplify 24/7 markets through 24/7 best practices. Authoritatively foster cutting-edge manufactured products and distinctive.',
+	) );
+
+	$cmb_options->add_group_field( $cmb_options_home, array(
+		'title'	=> __('Homepage'),
+		'name' => __( 'Title 2', 'neuron' ),
+		'desc' => __( 'section title', 'neuron' ),
+		'id'   => 'title_text2',
+		'type' => 'text',
+		'default' => 'Welcome to the Neuron Finance bla bla',
+	) );
+
+	$cmb_options->add_group_field( $cmb_options_home, array(
+		'name'    => __( 'Description 2', 'neuron' ),
+		'desc'    => __( 'section description', 'neuron' ),
+		'id'      => 'text_description2',
+		'type'    => 'textarea',
+		'default' => '#Interactively simplify 24/7 markets through 24/7 best practices. Authoritatively foster cutting-edge manufactured products and distinctive.',
+	) );
+
+	$cmb_options->add_group_field( $cmb_options_home, array(
+		'title'	=> __('Homepage'),
+		'name' => __( 'Title 3', 'neuron' ),
+		'desc' => __( 'section title', 'neuron' ),
+		'id'   => 'title_text3',
+		'type' => 'text',
+		'default' => 'Welcome to the Neuron Finance bla bla',
+	) );
+
+	$cmb_options->add_group_field( $cmb_options_home, array(
+		'name'    => __( 'Description 3', 'neuron' ),
+		'desc'    => __( 'section description', 'neuron' ),
+		'id'      => 'text_description3',
+		'type'    => 'textarea',
+		'default' => '#Interactively simplify 24/7 markets through 24/7 best practices. Authoritatively foster cutting-edge manufactured products and distinctive.',
+	) );
+
 }

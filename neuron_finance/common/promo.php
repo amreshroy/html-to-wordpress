@@ -1,11 +1,45 @@
+<?php 
+	$options = get_post_meta( get_the_ID(), 'home_group', true );
+    foreach ( (array) $options as $key => $option ) {
+
+		$title = $content = '';
+
+		if ( isset( $option['title_text1'] ) ) {
+			$title_one = esc_html( $option['title_text1'] );
+		}
+
+		if ( isset( $option['text_description1'] ) ) {
+			$content_one = esc_html( $option['text_description1'] );
+		}
+
+        if ( isset( $entry['title_text2'] ) ) {
+			$title2 = esc_html( $entry['title_text2'] );
+		}
+
+		if ( isset( $entry['text_description2'] ) ) {
+			$content2 = esc_html( $entry['text_description2'] );
+		}
+
+        if ( isset( $entry['title_text3'] ) ) {
+			$title3 = esc_html( $entry['title_text3'] );
+		}
+
+		if ( isset( $entry['text_description3'] ) ) {
+			$content3 = esc_html( $entry['text_description3'] );
+		}
+		else{
+			$entry = '';
+		}
+	}
+?>
 <section class="section-padding darker-bg">	
     <div class="container">
         <div class="row">
             <div class="col-lg-offset-3 col-lg-6 col-md-offset-2 col-md-8">
                 <div class="intro-title text-center">
-                    <h2>Welcome to the Neuron Finance</h2>
+                    <h2><?php echo $title_one; ?></h2>
                     <div class="hidden-xs">
-                        <p>Interactively simplify 24/7 markets through 24/7 best practices. Authoritatively foster cutting-edge manufactured products and distinctive.</p>
+                        <?php echo $content_one; ?>
                     </div>
                 </div>
             </div>
