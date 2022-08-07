@@ -196,6 +196,7 @@ add_action( 'cmb2_admin_init', 'cmb2_sample_metaboxes' );
 /**
  * Define the metabox and field configurations.
  */
+
 function cmb2_sample_metaboxes() {
 
 	/**
@@ -287,73 +288,45 @@ function cmb2_sample_metaboxes() {
 		'type' => 'text',
 	) );
 
+	// Theme Options
 	$cmb_options = new_cmb2_box( array(
 		'id'           => 'neuron_option_metabox',
-		'title'        => esc_html__( 'Theme Options', 'neuron' ),
+		'title'        => esc_html__( 'Site Options', 'neuron' ),
 		'object_types' => array( 'options-page' ),
 		'option_key'      => 'neuron_options', // The option key and admin menu page slug.
 		'icon_url'        => 'dashicons-palmtree', // Menu icon. Only applicable if 'parent_slug' is left empty.
 	) );
 
-	$cmb_options_home = $cmb_options->add_field( array(
-		'id'          => 'home_group',
-		'type'        => 'group',
-		'repeatable'  => false,
-		'options'     => array(
-			'group_title'   => 'Homepage Section Contents',
-			'closed'        => false,  // Repeater fields closed by default - neat & compact.
-		),
-	) );
-
-	$cmb_options->add_group_field( $cmb_options_home, array(
-		'title'	=> __('Homepage'),
+	$cmb_options->add_field( array(
 		'name' => __( 'Title 1', 'neuron' ),
-		'desc' => __( 'section title', 'neuron' ),
-		'id'   => 'title_text1',
+		'desc' => __( 'section 1 title', 'neuron' ),
+		'id'   => 'title1',
 		'type' => 'text',
-		'default' => 'Welcome to the Neuron Finance bla bla',
+		'default' => 'Default Title 1',
 	) );
 
-	$cmb_options->add_group_field( $cmb_options_home, array(
-		'name'    => __( 'Description 1', 'neuron' ),
-		'desc'    => __( 'section description', 'neuron' ),
-		'id'      => 'text_description1',
-		'type'    => 'textarea',
-		'default' => '#Interactively simplify 24/7 markets through 24/7 best practices. Authoritatively foster cutting-edge manufactured products and distinctive.',
+	$cmb_options->add_field( array(
+		'name' => __( 'Content 1', 'neuron' ),
+		'desc' => __( 'section 1 content', 'neuron' ),
+		'id'   => 'textarea1',
+		'type' => 'textarea',
+		'default' => 'Default Content 1',
 	) );
 
-	$cmb_options->add_group_field( $cmb_options_home, array(
-		'title'	=> __('Homepage'),
+	$cmb_options->add_field( array(
 		'name' => __( 'Title 2', 'neuron' ),
-		'desc' => __( 'section title', 'neuron' ),
-		'id'   => 'title_text2',
+		'desc' => __( 'section 2 title', 'neuron' ),
+		'id'   => 'title2',
 		'type' => 'text',
-		'default' => 'Welcome to the Neuron Finance bla bla',
+		'default' => 'Default Title 2',
 	) );
 
-	$cmb_options->add_group_field( $cmb_options_home, array(
-		'name'    => __( 'Description 2', 'neuron' ),
-		'desc'    => __( 'section description', 'neuron' ),
-		'id'      => 'text_description2',
-		'type'    => 'textarea',
-		'default' => '#Interactively simplify 24/7 markets through 24/7 best practices. Authoritatively foster cutting-edge manufactured products and distinctive.',
-	) );
-
-	$cmb_options->add_group_field( $cmb_options_home, array(
-		'title'	=> __('Homepage'),
-		'name' => __( 'Title 3', 'neuron' ),
-		'desc' => __( 'section title', 'neuron' ),
-		'id'   => 'title_text3',
-		'type' => 'text',
-		'default' => 'Welcome to the Neuron Finance bla bla',
-	) );
-
-	$cmb_options->add_group_field( $cmb_options_home, array(
-		'name'    => __( 'Description 3', 'neuron' ),
-		'desc'    => __( 'section description', 'neuron' ),
-		'id'      => 'text_description3',
-		'type'    => 'textarea',
-		'default' => '#Interactively simplify 24/7 markets through 24/7 best practices. Authoritatively foster cutting-edge manufactured products and distinctive.',
+	$cmb_options->add_field( array(
+		'name' => __( 'Content 2', 'neuron' ),
+		'desc' => __( 'section 2 content', 'neuron' ),
+		'id'   => 'textarea2',
+		'type' => 'textarea',
+		'default' => 'Default Content 2',
 	) );
 
 }
