@@ -298,35 +298,72 @@ function cmb2_sample_metaboxes() {
 	) );
 
 	$cmb_options->add_field( array(
-		'name' => __( 'Title 1', 'neuron' ),
-		'desc' => __( 'section 1 title', 'neuron' ),
-		'id'   => 'title1',
+		'name' => __( 'Portfolio Title', 'neuron' ),
+		'desc' => __( 'portfolio section title', 'neuron' ),
+		'id'   => 'portfolio_title',
 		'type' => 'text',
-		'default' => 'Default Title 1',
+		'default' => 'Default Title',
 	) );
 
 	$cmb_options->add_field( array(
-		'name' => __( 'Content 1', 'neuron' ),
-		'desc' => __( 'section 1 content', 'neuron' ),
-		'id'   => 'textarea1',
+		'name' => __( 'Portfolio Contents', 'neuron' ),
+		'desc' => __( 'portfolio section content', 'neuron' ),
+		'id'   => 'portfolio_content',
 		'type' => 'textarea',
-		'default' => 'Default Content 1',
+		'default' => 'Default Content',
 	) );
 
 	$cmb_options->add_field( array(
-		'name' => __( 'Title 2', 'neuron' ),
-		'desc' => __( 'section 2 title', 'neuron' ),
-		'id'   => 'title2',
+		'name' => __( 'Service Title', 'neuron' ),
+		'desc' => __( 'service section title', 'neuron' ),
+		'id'   => 'service_title',
 		'type' => 'text',
-		'default' => 'Default Title 2',
+		'default' => 'Default Title',
 	) );
 
 	$cmb_options->add_field( array(
-		'name' => __( 'Content 2', 'neuron' ),
-		'desc' => __( 'section 2 content', 'neuron' ),
-		'id'   => 'textarea2',
+		'name' => __( 'Service Contents', 'neuron' ),
+		'desc' => __( 'service section contents', 'neuron' ),
+		'id'   => 'service_content',
 		'type' => 'textarea',
-		'default' => 'Default Content 2',
+		'default' => 'Default Content',
+		) );	
+		
+	$cmb_options->add_field( array(
+		'name' => __( 'Home Post Title', 'neuron' ),
+		'desc' => __( 'home main post title', 'neuron' ),
+		'id'   => 'home_post_title',
+		'type' => 'text',
+		'default' => 'Default Title',
 	) );
 
+	$cmb_options->add_field( array(
+		'name' => __( 'Home Post Contents', 'neuron' ),
+		'desc' => __( 'home main post contents', 'neuron' ),
+		'id'   => 'home_post_content',
+		'type' => 'textarea',
+		'default' => 'Default Content',
+	) );
+	
+	$cmb_options->add_field( array(
+		'name' => __( 'Home Post image', 'neuron' ),
+		'desc' => __( 'home main post image', 'neuron' ),
+		'id'   => 'home_post_image',
+		'type'    => 'file',
+		// Optional:
+		'options' => array(
+			'url' => false,
+		),
+		'text'    => array(
+			'add_upload_file_text' => 'Add Image'
+		),
+		'query_args' => array(
+			'type' => array(
+				'image/gif',
+				'image/jpeg',
+				'image/png',
+			),
+		),
+		'preview_size' => 'large',
+	) );
 }

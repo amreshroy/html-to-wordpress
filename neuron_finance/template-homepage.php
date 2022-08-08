@@ -1,9 +1,10 @@
 <?php 
+$opts = get_option( 'neuron_options' );
+
 /*
 Template Name: Homepage Template
 */
 	get_header(); ?>	
-
 		<!-- ::::::::::::::::::::: Header Section:::::::::::::::::::::::::: -->
 		<!-- ::::::::::::::::::::: start slider section:::::::::::::::::::::::::: -->
 		<section class="slider-area">
@@ -44,15 +45,14 @@ Template Name: Homepage Template
 				<div class="row">
 					<div class="col-md-6">
 						<div class="block-text">
-							<h2>A Finance Agency Crafting Beautiful & Engaging Online Experiences</h2>
-							<p>Seamlessly communicate distinctive alignments and business models. Efficiently whiteboard robust meta-services whereas stand-alone synergy. Enthusiastically engage premier supply chains after intuitive testing procedures. Conveniently parallel task robust imperatives through corporate customer service.</p> 
-							
-							<p>Dynamically productivate tactical mindshare via business collaboration and idea-sharing. Credibly conceptualize extensive schemas for functionalized metrics. </p>
+							<h2><?php echo  $opts['home_post_title'] ?></h2>
+							<p><?php echo  $opts['home_post_content'] ?></p>
 						</div>
 					</div>
 					<div class="col-md-6">
 						<div class="block-img">
-							<img src="<?php echo get_template_directory_uri(); ?>/assets/img/homepageblock.jpg" alt="" />
+						<?php echo  $opts['home_post_image'] ?>
+							
 						</div>
 					</div>
 				</div>

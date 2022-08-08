@@ -1,12 +1,12 @@
 <?php $opts = get_option( 'neuron_options' ); ?>
 <!-- ::::::::::::::::::::: start services section:::::::::::::::::::::::::: -->
-<section class="section-padding <?php if(!is_page(26)) : ?>darker-bg <?php endif; ?>">
+<section class="section-padding <?php if(!is_page(26)) : ?> darker-bg <?php endif; ?>">
     <div class="container">
         <div class="row">
             <div class="col-md-offset-2 col-md-8 col-lg-offset-3 col-lg-6">
                 <div class="template-title text-center">
-                    <h2><?php echo  $opts['title2'] ?></h2>
-                    <p><?php echo ($opts['textarea2']) ?></p>
+                    <h2><?php echo  $opts['service_title'] ?></h2>
+                    <p><?php echo ($opts['service_content']) ?></p>
                 </div>
             </div>
         </div>
