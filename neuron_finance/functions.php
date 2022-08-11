@@ -298,6 +298,12 @@ function cmb2_sample_metaboxes() {
 	) );
 
 	$cmb_options->add_field( array(
+		'name' => 'Homepage Contents',
+		'type' => 'title',
+		'id'   => 'homepage_title'
+	) );
+
+	$cmb_options->add_field( array(
 		'name' => __( 'Portfolio Title', 'neuron' ),
 		'desc' => __( 'portfolio section title', 'neuron' ),
 		'id'   => 'portfolio_title',

@@ -1,5 +1,6 @@
 <?php 
 $opts = get_option( 'neuron_options' );
+// $image = wp_get_attachment_image( $opts );
 
 /*
 Template Name: Homepage Template
@@ -51,8 +52,7 @@ Template Name: Homepage Template
 					</div>
 					<div class="col-md-6">
 						<div class="block-img">
-						<?php echo  $opts['home_post_image'] ?>
-							
+							<img src="<?php echo $opts['home_post_image']  ?>" />
 						</div>
 					</div>
 				</div>
