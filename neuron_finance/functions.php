@@ -192,6 +192,9 @@ add_filter( 'use_widgets_block_editor', '__return_false' );
 // CMB2 Metabox Added
 require_once __DIR__ . '/inc/cmb2/init.php';
 
+//Codestar Framework Added
+require_once get_theme_file_path() .'/inc/codestar-framework/codestar-framework.php';
+
 add_action( 'cmb2_admin_init', 'cmb2_sample_metaboxes' );
 /**
  * Define the metabox and field configurations.
