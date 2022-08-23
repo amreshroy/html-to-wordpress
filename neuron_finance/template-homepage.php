@@ -3,8 +3,9 @@ $cmb_opts = get_option( 'neuron_options' );
 
 // Get options
  // unique id of the framework
-$home_main =get_option('my_framework');
-$main_group = $home_main['opt-fieldset-2'];
+$home_main = get_option('my_neuron');
+$about_group = $home_main['opt-switcher-about'];
+$main_group = $home_main['opt-fieldset-main'];
 /*
 Template Name: Homepage Template
 */
@@ -40,7 +41,7 @@ Template Name: Homepage Template
 	
 	
 		<!-- ::::::::::::::::::::: start intro section:::::::::::::::::::::::::: -->
-		<?php get_template_part('common/promo'); ?>
+		<?php if($about_group == false ) { get_template_part('common/promo');} ?>
 	
 	
 		<!-- ::::::::::::::::::::: start block content area:::::::::::::::::::::::::: -->
@@ -58,7 +59,7 @@ Template Name: Homepage Template
 					<div class="col-md-6">
 						<div class="block-img">
 							<img src="<?php //echo $cmb_opts['home_post_image']  ?>" />
-							<img src="<?php echo $main_group['opt-upload-2']  ?>" />
+							<img src="<?php echo $main_group['opt-upload-main']  ?>" />
 						</div>
 					</div>
 				</div>
