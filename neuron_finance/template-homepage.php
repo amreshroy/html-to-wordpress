@@ -1,7 +1,10 @@
 <?php 
-$opts = get_option( 'neuron_options' );
-// $image = wp_get_attachment_image( $opts );
+$cmb_opts = get_option( 'neuron_options' );
 
+// Get options
+ // unique id of the framework
+$home_main =get_option('my_framework');
+$main_group = $home_main['opt-fieldset-2'];
 /*
 Template Name: Homepage Template
 */
@@ -46,13 +49,16 @@ Template Name: Homepage Template
 				<div class="row">
 					<div class="col-md-6">
 						<div class="block-text">
-							<h2><?php echo  $opts['home_post_title'] ?></h2>
-							<p><?php echo  $opts['home_post_content'] ?></p>
+							<h2><?php //echo  $cmb_opts['home_post_title']; ?></h2>
+							<h2><?php echo $main_group['main-title']; // id of the field ?></h2>
+							<p><?php //echo  $cmb_opts['home_post_content']; ?></p>
+							<p><?php echo  $main_group['main-content']; ?></p>
 						</div>
 					</div>
 					<div class="col-md-6">
 						<div class="block-img">
-							<img src="<?php echo $opts['home_post_image']  ?>" />
+							<img src="<?php //echo $cmb_opts['home_post_image']  ?>" />
+							<img src="<?php echo $main_group['opt-upload-2']  ?>" />
 						</div>
 					</div>
 				</div>

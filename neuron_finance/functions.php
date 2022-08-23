@@ -194,6 +194,7 @@ require_once __DIR__ . '/inc/cmb2/init.php';
 
 //Codestar Framework Added
 require_once get_theme_file_path() .'/inc/codestar-framework/codestar-framework.php';
+require_once get_theme_file_path() .'/inc/codestar-framework/options/admin-options.php';
 
 add_action( 'cmb2_admin_init', 'cmb2_sample_metaboxes' );
 /**
@@ -376,3 +377,5 @@ function cmb2_sample_metaboxes() {
 		'preview_size' => 'large',
 	) );
 }
+
+ 
