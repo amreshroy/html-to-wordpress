@@ -19,11 +19,13 @@ if( class_exists( 'CSF' ) ) {
   CSF::createSection( $prefix, array(
     'title'  => 'Homepage Content',
     'fields' => array(
+
         array(
             'id'     => 'opt-fieldset-about',
             'type'   => 'fieldset',
             'title'  => 'About Section',
             'fields' => array(
+
                 array(
                     'id'      => 'opt-switcher-about',
                     'type'    => 'switcher',
@@ -32,7 +34,7 @@ if( class_exists( 'CSF' ) ) {
                     'default' => false
                   ), 
                 //
-                // A text field
+                // A text field with dependency
                 array(
                     'id'    => 'about-title',
                     'type'  => 'text',
@@ -58,6 +60,7 @@ if( class_exists( 'CSF' ) ) {
             'type'   => 'fieldset',
             'title'  => 'Main Section',
             'fields' => array(
+
                 array(
                     'id'      => 'opt-switcher-main',
                     'type'    => 'switcher',
@@ -104,6 +107,7 @@ if( class_exists( 'CSF' ) ) {
             'type'   => 'fieldset',
             'title'  => 'Service Section',
             'fields' => array(
+                
                 array(
                     'id'      => 'opt-switcher-service',
                     'type'    => 'switcher',

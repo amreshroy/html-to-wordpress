@@ -4,7 +4,7 @@ $cmb_opts = get_option( 'neuron_options' );
 // Get options
  // unique id of the framework
 $home_main = get_option('my_neuron');
-$about_group = $home_main['opt-switcher-about'];
+$about_group = $home_main['opt-fieldset-about'];
 $main_group = $home_main['opt-fieldset-main'];
 /*
 Template Name: Homepage Template
@@ -41,10 +41,11 @@ Template Name: Homepage Template
 	
 	
 		<!-- ::::::::::::::::::::: start intro section:::::::::::::::::::::::::: -->
-		<?php if($about_group == false ) { get_template_part('common/promo');} ?>
+		<?php if( $about_group['opt-switcher-about'] == false ) { get_template_part('common/promo');} ?>
 	
 	
 		<!-- ::::::::::::::::::::: start block content area:::::::::::::::::::::::::: -->
+		<?php if( $main_group['opt-switcher-main'] == false ) : ?>
 		<section class="section-padding">
 			<div class="container">
 				<div class="row">
@@ -65,7 +66,7 @@ Template Name: Homepage Template
 				</div>
 			</div>
 		</section><!-- block area end -->
-	
+		<?php endif; ?>
 	
 		<?php get_template_part('common/services'); ?>
 	
