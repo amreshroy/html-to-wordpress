@@ -6,6 +6,7 @@ $cmb_opts = get_option( 'neuron_options' );
 $home_main = get_option('my_neuron');
 $about_group = $home_main['opt-fieldset-about'];
 $main_group = $home_main['opt-fieldset-main'];
+$service_group = $home_main['opt-fieldset-service'];
 /*
 Template Name: Homepage Template
 */
@@ -54,7 +55,8 @@ Template Name: Homepage Template
 							<h2><?php //echo  $cmb_opts['home_post_title']; ?></h2>
 							<h2><?php echo $main_group['main-title']; // id of the field ?></h2>
 							<p><?php //echo  $cmb_opts['home_post_content']; ?></p>
-							<p><?php echo  $main_group['main-content']; ?></p>
+							<?php $main_content = $main_group['main-content']; ?>
+							<p><?php echo wpautop($main_content); ?></p>
 						</div>
 					</div>
 					<div class="col-md-6">
@@ -68,7 +70,7 @@ Template Name: Homepage Template
 		</section><!-- block area end -->
 		<?php endif; ?>
 	
-		<?php get_template_part('common/services'); ?>
+		<?php if( $service_group['opt-switcher-service'] == false ) { get_template_part('common/services');} ?>
 	
 
 		<!-- :::::::::::::::::::::  Client Section:::::::::::::::::::::::::: -->

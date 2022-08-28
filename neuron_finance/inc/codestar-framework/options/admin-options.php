@@ -17,7 +17,7 @@ if( class_exists( 'CSF' ) ) {
   //
   // Create a section
   CSF::createSection( $prefix, array(
-    'title'  => 'Homepage Content',
+    'title'  => 'Home Page Content',
     'fields' => array(
 
         array(
@@ -107,7 +107,7 @@ if( class_exists( 'CSF' ) ) {
             'type'   => 'fieldset',
             'title'  => 'Service Section',
             'fields' => array(
-                
+
                 array(
                     'id'      => 'opt-switcher-service',
                     'type'    => 'switcher',
@@ -145,14 +145,49 @@ if( class_exists( 'CSF' ) ) {
     'title'  => 'About Page Content',
     'fields' => array(
 
-      // A textarea field
-      array(
-        'id'    => 'opt-textarea',
-        'type'  => 'textarea',
-        'title' => 'Simple Textarea',
-      ),
+        array(
+            'id'     => 'opt-fieldset-about-page',
+            'type'   => 'fieldset',
+            'title'  => 'About Section',
+            'fields' => array(
 
-    )
-  ) );
+                array(
+                    'id'      => 'opt-switcher-about-page',
+                    'type'    => 'switcher',
+                    'title'   => 'Hide Section',
+                    'label'   => 'Do you want to hide this section ?',
+                    'default' => false
+                ),
+            ),
+        ),
+
+        array(
+          'id'     => 'opt-fieldset-about-faqs',
+          'type'   => 'fieldset',
+          'title'  => 'FAQs Section',
+          'fields' => array(
+
+            array(
+              'id'        => 'faqs',
+              'type'      => 'group',
+              'title'     => 'All FAQs',
+              'fields'    => array(
+                    array(
+                      'id'    => 'faq-title-text',
+                      'type'  => 'text',
+                      'title' => 'Faqs Title',
+                    ),
+                    array(
+                      'id'    => 'faq-content-text',
+                      'type'  => 'textarea',
+                      'title' => 'Faqs Content',
+                    ),
+                  ),
+                ),
+              ),
+          ),
+        // ),
+      ),
+  ));
 
 }

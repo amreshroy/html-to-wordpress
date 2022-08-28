@@ -1,7 +1,11 @@
-<?php get_header(); 
+<?php 
 /*
 Template Name: About Template
 */
+get_header();
+$home_main = get_option('my_neuron');
+$about_group = $home_main['opt-fieldset-about-page'];
+$faqs_group = $home_main['opt-fieldset-about-faqs'];
 ?>
     <!-- ::::::::::::::::::::: Page Title Section:::::::::::::::::::::::::: -->
     <?php while ( have_posts() ) : the_post(); ?>
@@ -35,7 +39,7 @@ Template Name: About Template
     </section><!-- block area end -->
     
     <!-- ::::::::::::::::::::: Intro Section:::::::::::::::::::::::::: -->
-    <?php get_template_part('common/promo'); ?>
+    <?php if( $about_group['opt-switcher-about-page'] == false ) { get_template_part('common/promo'); }?>
 
     <!-- ::::::::::::::::::::: Accordian Section:::::::::::::::::::::::::: -->
     <section class="accordian-section section-padding">
