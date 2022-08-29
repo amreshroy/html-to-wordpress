@@ -186,7 +186,25 @@ if( class_exists( 'CSF' ) ) {
                 ),
               ),
           ),
-        // ),
+
+        array(
+          'id'     => 'opt-fieldset-about-faqs-right',
+          'type'   => 'fieldset',
+          'title'  => 'FAQs Right Section',
+          'fields' => array(
+
+                array(
+                  'id'    => 'faq-right-title-text',
+                  'type'  => 'text',
+                  'title' => 'Title',
+                ),
+                array(
+                  'id'    => 'faq-right-content-text',
+                  'type'  => 'textarea',
+                  'title' => 'Content',
+                ),
+            ),
+        )
       ),
   ));
 
