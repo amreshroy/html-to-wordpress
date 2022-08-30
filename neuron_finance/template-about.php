@@ -93,4 +93,8 @@ $faqs_right = $home_main['opt-fieldset-about-faqs-right'];
             </div>
         </div>
     </section><!-- end accordian section -->
+
+    <!-- :::::::::::::::::::::  Client Section:::::::::::::::::::::::::: -->
+    <?php  get_template_part('common/client-brand'); ?>
+
 <?php get_footer(); ?>
