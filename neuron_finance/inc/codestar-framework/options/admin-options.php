@@ -208,4 +208,19 @@ if( class_exists( 'CSF' ) ) {
       ),
   ));
 
+    //
+  // Create a section
+  CSF::createSection( $prefix, array(
+    'title'  => 'Client Logos',
+    'fields' => array(
+      array(
+        'id'          => 'opt-client-brand',
+        'type'        => 'gallery',
+        'title'       => 'Gallery',
+        'add_title'   => 'Add Images',
+        'edit_title'  => 'Edit Images',
+        'clear_title' => 'Remove Images',
+      ),
+    ),
+  ));
 }
