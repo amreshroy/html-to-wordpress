@@ -39,6 +39,7 @@
 .alignleft {float: left; margin-right: 20px;}
 .alignright {float: right; margin-left: 20px;}
 .aligncenter {float: none; display: block; margin: 0 auto;}
+nav.navbar.sticked { margin-top: 32px;}
 html,
 body { 
 	height: 100% 
