@@ -222,5 +222,79 @@ if( class_exists( 'CSF' ) ) {
         'clear_title' => 'Remove Images',
       ),
     ),
+  )); 
+
+  // Create a section
+  CSF::createSection( $prefix, array(
+    'title'  => 'Header Top Bar',
+    'fields' => array(
+
+      array(
+        'id'     => 'opt-fieldset-top-bar-mobile',
+        'type'   => 'fieldset',
+        'title'  => 'Mobile',
+        'fields' => array(
+
+          array(
+            'id'    => 'opt-icon-mobile',
+            'type'  => 'icon',
+            'title' => 'Icon',
+          ),
+
+          array(
+            'id'      => 'opt-top-bar-mobile',
+            'type'    => 'text',
+            'title'   => 'Mobile No',
+          ),
+        ),
+      ),
+      
+      array(
+        'id'     => 'opt-fieldset-top-bar-email',
+        'type'   => 'fieldset',
+        'title'  => 'Email',
+        'fields' => array(
+
+          array(
+            'id'    => 'opt-icon-email',
+            'type'  => 'icon',
+            'title' => 'Icon',
+          ),
+
+          array(
+            'id'      => 'opt-top-bar-email',
+            'type'    => 'text',
+            'title'   => 'Email',
+          ),
+        ),
+      ),
+      
+      array(
+        'id'     => 'opt-fieldset-social-icon',
+        'type'   => 'fieldset',
+        'title'  => 'Social Profile',
+        'fields' => array(
+
+          array(
+            'id'        => 'opt-group-top-bar',
+            'type'      => 'group',
+            'title'     => 'Add Profile',
+            'fields'    => array(
+              array(
+                'id'    => 'opt-icon',
+                'type'  => 'icon',
+                'title' => 'Icon',
+              ),
+
+              array(
+                'id'    => 'opt-link',
+                'type'  => 'link',
+                'title' => 'Link',
+              ),
+            ),
+          ),
+        ),
+      ),
+    ),
   ));
 }

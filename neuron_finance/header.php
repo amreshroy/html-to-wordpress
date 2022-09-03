@@ -11,18 +11,25 @@
 	<body <?php body_class(); ?>>
         <header>
 			<!-- start top bar -->
+			<?php $top_bar = get_option('my_neuron');
+				$top_bar_mobile = $top_bar['opt-fieldset-top-bar-mobile'];
+				$top_bar_email = $top_bar['opt-fieldset-top-bar-email'];
+			?>
 			<div class="header-top-area">
 				<div class="container">
 					<div class="row">
 						<div class="col-sm-8 hidden-xs">
 							<div class="contact">
 								<p>
-									<i class="fa fa-phone"></i>
-									+880 123 456 789
+									<!-- <i class="fa fa-phone"></i> -->
+									<i><?php echo $top_bar_mobile['opt-icon-mobile']; ?></i>
+									<?php echo $top_bar_mobile['opt-top-bar-mobile']; ?>
+									<!-- +880 123 456 789 -->
 								</p>
 								<p>
-									<i class="fa fa-envelope"></i>
-									<a href="#">24hrsuport@domain.com</a>
+									<!-- <i class="fa fa-envelope"></i> -->
+									<i><?php echo $top_bar_email['opt-icon-email']; ?></i>
+									<a href="#"><?php echo $top_bar_email['opt-top-bar-email']; ?></a>
 								</p>
 							</div><!-- /.contact -->
 						</div><!-- /.col-sm-8 -->
