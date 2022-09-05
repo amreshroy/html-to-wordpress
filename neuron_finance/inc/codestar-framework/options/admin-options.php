@@ -242,9 +242,15 @@ if( class_exists( 'CSF' ) ) {
           ),
 
           array(
-            'id'      => 'opt-top-bar-mobile',
+            'id'      => 'opt-top-bar-mobile-no',
             'type'    => 'text',
             'title'   => 'Mobile No',
+          ),
+
+          array(
+            'id'    => 'opt-mobile-link',
+            'type'  => 'link',
+            'title' => 'Link',
           ),
         ),
       ),
@@ -265,6 +271,12 @@ if( class_exists( 'CSF' ) ) {
             'id'      => 'opt-top-bar-email',
             'type'    => 'text',
             'title'   => 'Email',
+          ),
+
+          array(
+            'id'    => 'opt-email-link',
+            'type'  => 'link',
+            'title' => 'Link',
           ),
         ),
       ),

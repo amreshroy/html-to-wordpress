@@ -14,6 +14,8 @@
 			<?php $top_bar = get_option('my_neuron');
 				$top_bar_mobile = $top_bar['opt-fieldset-top-bar-mobile'];
 				$top_bar_email = $top_bar['opt-fieldset-top-bar-email'];
+				$mobile_link = implode(" ", $top_bar_mobile['opt-mobile-link']);
+				$email_link = implode(" ", $top_bar_email['opt-email-link']);
 			?>
 			<div class="header-top-area">
 				<div class="container">
@@ -21,15 +23,12 @@
 						<div class="col-sm-8 hidden-xs">
 							<div class="contact">
 								<p>
-									<!-- <i class="fa fa-phone"></i> -->
-									<i><?php echo $top_bar_mobile['opt-icon-mobile']; ?></i>
-									<?php echo $top_bar_mobile['opt-top-bar-mobile']; ?>
-									<!-- +880 123 456 789 -->
+									<i class="<?php echo $top_bar_mobile['opt-icon-mobile']; ?>"></i>
+									<a href="<?php echo $mobile_link; ?>"><?php echo $top_bar_mobile['opt-top-bar-mobile-no']; ?></a>
 								</p>
 								<p>
-									<!-- <i class="fa fa-envelope"></i> -->
-									<i><?php echo $top_bar_email['opt-icon-email']; ?></i>
-									<a href="#"><?php echo $top_bar_email['opt-top-bar-email']; ?></a>
+									<i class="<?php echo $top_bar_email['opt-icon-email']; ?>"></i>
+									<a href="<?php echo $email_link; ?>"><?php echo $top_bar_email['opt-top-bar-email']; ?></a>
 								</p>
 							</div><!-- /.contact -->
 						</div><!-- /.col-sm-8 -->

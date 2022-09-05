@@ -189,6 +189,9 @@ add_filter( 'gutenberg_use_widgets_block_editor', '__return_false' );
 // Disables the block editor from managing widgets.
 add_filter( 'use_widgets_block_editor', '__return_false' );
 
+add_filter( 'csf_fa4', '__return_true' );
+
+
 // CMB2 Metabox Added
 require_once __DIR__ . '/inc/cmb2/init.php';
 
