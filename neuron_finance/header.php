@@ -16,6 +16,8 @@
 				$top_bar_email = $top_bar['opt-fieldset-top-bar-email'];
 				$mobile_link = implode(" ", $top_bar_mobile['opt-mobile-link']);
 				$email_link = implode(" ", $top_bar_email['opt-email-link']);
+				$top_bar_socials = $top_bar['opt-fieldset-social-icon'];
+				$socials = $top_bar_socials['opt-group-top-bar-socials'];
 			?>
 			<div class="header-top-area">
 				<div class="container">
@@ -35,13 +37,13 @@
 						
 						<div class="col-sm-4">
 							<div class="social-icon">
+								<?php foreach ($socials as $social) : 
+									$social_link = implode(" ", $social['opt-social-link']);
+								?>
 								<ul>
-									<li><a href=""><i class="fa fa-facebook"></i></a></li>
-									<li><a href=""><i class="fa fa-twitter"></i></a></li>
-									<li><a href=""><i class="fa fa-linkedin"></i></a></li>
-									<li><a href=""><i class="fa fa-google-plus"></i></a></li>
-									<li><a href=""><i class="fa fa-tumblr"></i></a></li>
+									<li><a href="<?php echo $social_link; ?>"><i class="<?php echo $social['opt-social-icon']; ?>"></i></a></li>
 								</ul>
+								<?php endforeach; ?>
 							</div><!-- /.social-icon -->
 						</div><!-- /.col-sm-4 -->
 					</div><!-- /.row -->
@@ -108,7 +110,7 @@
 							wp_nav_menu(
 								array(
 									'theme_location' => 'menu-1',
-									'menu_class'        => 'nav navbar-nav navbar-right',
+									'menu_class'     => 'nav navbar-nav navbar-right',
 								)
 							);
 						?>

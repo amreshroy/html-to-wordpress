@@ -288,18 +288,18 @@ if( class_exists( 'CSF' ) ) {
         'fields' => array(
 
           array(
-            'id'        => 'opt-group-top-bar',
+            'id'        => 'opt-group-top-bar-socials',
             'type'      => 'group',
             'title'     => 'Add Profile',
             'fields'    => array(
               array(
-                'id'    => 'opt-icon',
+                'id'    => 'opt-social-icon',
                 'type'  => 'icon',
                 'title' => 'Icon',
               ),
 
               array(
-                'id'    => 'opt-link',
+                'id'    => 'opt-social-link',
                 'type'  => 'link',
                 'title' => 'Link',
               ),
