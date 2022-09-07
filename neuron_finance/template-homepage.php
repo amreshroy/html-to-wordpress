@@ -42,7 +42,7 @@ Template Name: Homepage Template
 	
 	
 		<!-- ::::::::::::::::::::: start intro section:::::::::::::::::::::::::: -->
-		<?php if( $about_group['opt-switcher-about'] == false ) { get_template_part('common/promo');} ?>
+		<?php if( $about_group['opt-switcher-about'] == false ) { get_template_part('common/promo'); } ?>
 	
 	
 		<!-- ::::::::::::::::::::: start block content area:::::::::::::::::::::::::: -->

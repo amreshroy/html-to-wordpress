@@ -11,14 +11,19 @@
 	<body <?php body_class(); ?>>
         <header>
 			<!-- start top bar -->
-			<?php $top_bar = get_option('my_neuron');
+			<?php 
+				$top_bar = get_option('my_neuron');
 				$top_bar_mobile = $top_bar['opt-fieldset-top-bar-mobile'];
 				$top_bar_email = $top_bar['opt-fieldset-top-bar-email'];
 				$mobile_link = implode(" ", $top_bar_mobile['opt-mobile-link']);
 				$email_link = implode(" ", $top_bar_email['opt-email-link']);
 				$top_bar_socials = $top_bar['opt-fieldset-social-icon'];
+				if (!empty( $top_bar_socials )){
 				$socials = $top_bar_socials['opt-group-top-bar-socials'];
+				}
 			?>
+
+			<?php if ($top_bar['opt-switcher-top-bar'] == false) : ?>
 			<div class="header-top-area">
 				<div class="container">
 					<div class="row">
@@ -37,18 +42,19 @@
 						
 						<div class="col-sm-4">
 							<div class="social-icon">
-								<?php foreach ($socials as $social) : 
+								<?php if(!empty ( $socials )) : foreach ($socials as $social) : 
 									$social_link = implode(" ", $social['opt-social-link']);
 								?>
 								<ul>
 									<li><a href="<?php echo $social_link; ?>"><i class="<?php echo $social['opt-social-icon']; ?>"></i></a></li>
 								</ul>
-								<?php endforeach; ?>
+								<?php endforeach; endif; ?>
 							</div><!-- /.social-icon -->
 						</div><!-- /.col-sm-4 -->
 					</div><!-- /.row -->
 				</div><!-- /.container -->
 			</div><!-- end top bar -->
+			<?php endif; ?>
 			
 	        <!-- Start Navigation -->
 	        <nav class="navbar navbar-default navbar-sticky bootsnav">
@@ -65,36 +71,6 @@
 	            <!-- End Top Search -->
 
 	            <div class="container">
-	                <!-- Start Atribute Navigation -->
-	                <div class="attr-nav">
-	                    <ul>
-	                        <li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
-	                        <li class="dropdown">
-	                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" >
-	                                <i class="fa fa-shopping-bag"></i>
-	                                <span class="badge">2</span>
-	                            </a>
-	                            <ul class="dropdown-menu cart-list">
-	                                <li>
-	                                    <a href="#" class="photo"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/cart-1.jpg" class="cart-thumb" alt="" /></a>
-	                                    <h2><a href="#">Denim SlimFit Shirt </a></h2>
-	                                    <p>2x - <span class="price">$19.99</span></p>
-	                                </li>
-	                                <li>
-	                                    <a href="#" class="photo"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/cart-3.jpg" class="cart-thumb" alt="" /></a>
-	                                    <h2><a href="#">Denim Polo Shirt</a></h2>
-	                                    <p>2x - <span class="price">$12.99</span></p>
-	                                </li>
-	                                <li class="total">
-	                                    <span class="pull-right"><strong>Total</strong>: $320.00</span>
-	                                    <a href="#" class="btn btn-primary btn-sm btn-cart">Cart</a>
-	                                </li>
-	                            </ul>
-	                        </li>
-	                    </ul>
-	                </div>
-	                <!-- End Atribute Navigation -->
-
 	                <!-- Start Header Navigation -->
 	                <div class="navbar-header">
 	                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">

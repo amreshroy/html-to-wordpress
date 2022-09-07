@@ -230,9 +230,18 @@ if( class_exists( 'CSF' ) ) {
     'fields' => array(
 
       array(
+        'id'      => 'opt-switcher-top-bar',
+        'type'    => 'switcher',
+        'title'   => 'Top Bar',
+        'label'   => 'Hide top bar ?',
+        'default' => false
+      ),
+
+      array(
         'id'     => 'opt-fieldset-top-bar-mobile',
         'type'   => 'fieldset',
         'title'  => 'Mobile',
+        'dependency' => array( 'opt-switcher-top-bar', '==', 'false' ),
         'fields' => array(
 
           array(
@@ -259,6 +268,7 @@ if( class_exists( 'CSF' ) ) {
         'id'     => 'opt-fieldset-top-bar-email',
         'type'   => 'fieldset',
         'title'  => 'Email',
+        'dependency' => array( 'opt-switcher-top-bar', '==', 'false' ),
         'fields' => array(
 
           array(
@@ -285,6 +295,7 @@ if( class_exists( 'CSF' ) ) {
         'id'     => 'opt-fieldset-social-icon',
         'type'   => 'fieldset',
         'title'  => 'Social Profile',
+        'dependency' => array( 'opt-switcher-top-bar', '==', 'false' ),
         'fields' => array(
 
           array(
