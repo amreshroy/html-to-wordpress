@@ -25,7 +25,7 @@ function neuron_register_required_plugins() {
 		array(
 			'name'      => 'Redux Framework',
 			'slug'      => 'reduxframework/redux-framework/',
-            'required'           => true,
+            'required'  => true,
 			'source'    => 'https://github.com/reduxframework/redux-framework/archive/refs/heads/master.zip',
 		),
 

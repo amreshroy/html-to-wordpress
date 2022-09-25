@@ -201,6 +201,7 @@ require_once get_theme_file_path() .'/inc/codestar-framework/options/admin-optio
 
 // Redux Framework Added
 require_once __DIR__ . '/inc/redux_4/tgm.php';
+// require_once __DIR__ . '/inc/redux_4/redux_options.php';
 
 add_action( 'cmb2_admin_init', 'cmb2_sample_metaboxes' );
 /**
